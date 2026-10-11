@@ -1,0 +1,87 @@
+.card { position: sticky; top: calc(clamp(92px, 11vh, 112px) + var(--stack, 0) * 8px); margin-bottom: clamp(46px, 6vw, 88px); }
+.card:last-child { margin-bottom: 0; }
+.surface {
+  position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center; gap: clamp(26px, 4vw, 72px); padding: clamp(28px, 3.6vw, 62px);
+  border: 1px solid #e0e9f0; border-radius: 24px; background: #fff;
+  box-shadow: 0 28px 64px -38px #244c7130; transform-origin: center top; isolation: isolate;
+}
+.surface::before { content: ''; position: absolute; z-index: -1; width: 65%; height: 140%; left: -15%; top: -20%; border: 1px solid #edf3f7; border-radius: 50%; pointer-events: none; clip-path: inset(14.4% 0 14.4% 23%); }
+.text { position: relative; z-index: 2; }
+.eyebrow { display: flex; align-items: center; gap: 22px; font-size: 13px; text-transform: uppercase; letter-spacing: .26em; color: #7b8c98; font-weight: 500; }
+.eyebrow::before { content: ''; width: 58px; height: 2px; flex: none; background: #509f38; }
+.titleRow { display: flex; align-items: center; gap: 22px; margin-top: 26px; }
+.serviceIcon { position: relative; flex: none; display: grid; place-items: center; width: 60px; aspect-ratio: 1; background: #edf5fe; border-radius: 13px; color: var(--brand-blue); }
+.serviceIcon > svg { width: 58%; height: 58%; }
+.serviceIcon > span { position: absolute; width: 11px; height: 11px; border: 2px solid #509f38; border-radius: 50%; right: 16%; bottom: 20%; background: #edf5fe; }
+.title { font-size: 34px; line-height: 1.04; letter-spacing: -.025em; color: var(--navy); text-wrap: balance; }
+.rule { display: block; height: 1px; width: 100%; background: #e1e9ef; margin: 24px 0 19px; }
+.copy { font-size: clamp(14px, 1.12vw, 20px); line-height: 1.65; color: #7b8c98; max-width: 49ch; }
+.features { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 26px; }
+.features li { display: flex; align-items: center; gap: 9px; min-height: 54px; padding: 10px; border-radius: 13px; background: #f7fafd; border-bottom: 1px solid #eaf0f5; }
+.features svg { flex: none; color: var(--brand-blue); width: 23px; }
+.features span { color: var(--navy); font-size: clamp(10px, .68vw, 12px); line-height: 1.45; }
+.actions { display: flex; align-items: center; gap: 26px; margin-top: 30px; }
+.primary { display: inline-flex; align-items: center; justify-content: center; gap: 22px; padding: 17px 24px; border-radius: 40px; background: var(--brand-blue); color: white; font-size: clamp(12px, .92vw, 16px); font-weight: 500; box-shadow: 0 12px 24px -14px #0067cf70; transition: background .25s; }
+.primary:hover { background: var(--blue-deep); }
+.primary svg, .secondary svg { flex: none; transition: transform .25s; }
+.primary:hover svg, .secondary:hover svg { transform: translateX(4px); }
+.secondary { display: inline-flex; align-items: center; gap: 18px; font-size: clamp(12px, .92vw, 16px); font-weight: 500; color: var(--navy); padding-block: 7px; border-bottom: 1px solid #b9d5ec; white-space: nowrap; }
+.secondary svg { color: #2878b9; }
+.visual { position: relative; min-width: 0; }
+.visual::before { content: ''; position: absolute; left: -6%; right: 7%; top: -2%; bottom: 7%; border-radius: 28px; background: #f2f9fd; border: 1px solid #edf5fc; }
+.frame { position: absolute; top: -5%; right: -3%; width: 48%; height: 62%; border: 1px solid #78bf86; border-radius: 32px; }
+.frame::after { content: ''; position: absolute; right: 7%; top: -5px; width: 9px; height: 9px; border-radius: 50%; background: #78bf86; box-shadow: inset 0 0 0 3px #78bf86; border: 2px solid #d9f2de; }
+.media { position: relative; aspect-ratio: 1.45; overflow: hidden; border-radius: 24px; background: #e4edf3; }
+.media > img { object-fit: cover; }
+.badge { position: absolute; display: flex; align-items: center; gap: 15px; left: 4%; bottom: 6%; max-width: 91%; padding: 10px 22px 10px 10px; border-radius: 60px; background: #fffffff2; box-shadow: 0 8px 22px #16334a0c; }
+.badgeIcon { display: grid; place-items: center; flex: none; width: 55px; height: 55px; border-radius: 50%; color: var(--navy); background: white; }
+.badge p { font-size: clamp(8px, .58vw, 10px); text-transform: uppercase; color: #6b7d8d; letter-spacing: .12em; margin-bottom: 3px; }
+.badge div > span { display: block; font-family: var(--font-heading); font-size: clamp(15px, 1.2vw, 21px); line-height: 1.4; color: var(--navy); }
+.shade { position: absolute; z-index: 3; inset: 0; border-radius: inherit; background: #183e5d; pointer-events: none; opacity: 0; }
+@media (min-width: 900px) and (max-width: 1180px) {
+  .surface { gap: 28px; padding: 28px; }
+  .titleRow { gap: 16px; }
+  .features { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; }
+  .features li { min-height: 42px; }
+  .actions { gap: 18px; }
+  .primary { padding: 15px 18px; gap: 14px; }
+  .badge { padding-right: 15px; gap: 8px; }
+  .badgeIcon { width: 38px; height: 38px; }
+}
+@media (max-width: 899px) {
+  .card { position: relative; top: auto; margin-bottom: 28px; }
+  .surface { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: clamp(24px, 5vw, 40px); border-radius: 20px; }
+  .surface::before { display: none; }
+  .title { font-size: clamp(28px, 4.8vw, 34px); }
+  .titleRow { margin-top: 20px; }
+  .copy { font-size: 15px; }
+  .features span { font-size: 11px; }
+  .primary, .secondary { font-size: 13px; }
+  .badge p { font-size: 8px; }
+  .badge div > span { font-size: 17px; }
+  .media { border-radius: 18px; }
+}
+@media (max-width: 560px) {
+  .eyebrow { gap: 14px; font-size: 13px; }
+  .eyebrow::before { width: 36px; }
+  .titleRow { gap: 14px; }
+  .serviceIcon { width: 55px; border-radius: 12px; }
+  .title { font-size: 27px; }
+  .rule { margin-block: 20px 15px; }
+  .features { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
+  .actions { gap: 20px; align-items: start; flex-direction: column; margin-top: 24px; }
+  .primary { width: 100%; justify-content: space-between; }
+  .badge { left: 4%; padding: 8px 12px 8px 8px; gap: 8px; border-radius: 18px; }
+  .badgeIcon { width: 36px; height: 36px; }
+  .badgeIcon svg { width: 23px; }
+  .badge div > span { font-size: 13px; }
+  .badge p { font-size: 7px; }
+  .media { aspect-ratio: 1.2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { position: relative; top: auto; }
+  .primary, .primary svg, .secondary svg { transition: none; }
+}
+
+@media (max-width: 380px) { .title { font-size: 20px; } }

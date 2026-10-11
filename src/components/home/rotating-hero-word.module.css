@@ -1,0 +1,9 @@
+.word { position: relative; display: inline-block; vertical-align: baseline; white-space: nowrap; }
+.measure { visibility: hidden; }
+.current, .incoming { position: absolute; inset: 0; }
+.current { opacity: 1; transform: translateY(0); }
+.incoming { opacity: 0; transform: translateY(20px); }
+.moving .current, .moving .incoming { transition: transform 600ms cubic-bezier(.22,.61,.36,1), opacity 600ms ease; }
+.moving .current { opacity: 0; transform: translateY(-20px); }
+.moving .incoming { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .current, .incoming { transition: none !important; } }

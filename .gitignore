@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+tmp/
+reference/
+outputs/
+public/qa/
+*.tsbuildinfo
+.env*
+!.env.example
+.next-dev.log
+.next-dev.pid
+.codebuff-logs/
+.freebuff/
+.vercel/
+docs/screenshots/

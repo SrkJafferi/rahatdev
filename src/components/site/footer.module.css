@@ -1,0 +1,61 @@
+.footer { color: #102538; background: #f5f9fc; }
+.main { position: relative; isolation: isolate; overflow: hidden; min-height: 510px; padding: 82px var(--gut) 45px; }
+.background { position: absolute; inset: 0; z-index: -2; }
+.background img { object-fit: cover; object-position: center 76%; }
+.main::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #ffffffdb 0%, #ffffffce 55%, #ffffffb3 78%, transparent 95%); }
+.grid { max-width: 1408px; margin: auto; display: grid; grid-template-columns: 1.3fr .85fr .75fr 1.15fr; gap: 42px; }
+.brand > a { display: block; width: min(100%, 260px); }
+.brand img { width: 100%; height: auto; }
+.tagline { font-size: 22px; font-weight: 600; line-height: 1.3; margin-top: 18px; letter-spacing: -.02em; }
+.tagline em { font-family: var(--font-editorial), Georgia, serif; color: #0067cf; font-size: 28px; }
+.tagline::after { content: ''; display: block; width: 30px; height: 2px; background: #509f38; margin-top: 12px; }
+.description { color: #738496; font-size: 14px; line-height: 1.8; margin-top: 15px; }
+.contactDetails { display: grid; gap: 12px; margin-top: 20px; font-style: normal; font-size: 12px; line-height: 1.65; color: #506b80; }
+.contactDetails > a, .contactDetails > p { display: flex; align-items: flex-start; gap: 10px; }
+.contactDetails svg { flex: none; margin-top: 2px; color: #0067cf; }
+.contactDetails span { min-width: 0; overflow-wrap: anywhere; }
+.contactDetails > a:hover { color: #0067cf; }
+.socials { display: flex; gap: 12px; margin-top: 20px; }
+.socials a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #ffffffb3; color: #0067cf; border: 1px solid #e0edf7; box-shadow: 0 4px 9px #10253808; transition: background .2s, transform .2s; }
+.socials a:hover { background: white; transform: translateY(-2px); }
+.copyright { margin-top: 32px; color: #738496; font-size: 10px; line-height: 1.7; text-align: center; }
+.eyebrow { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 28px; white-space: nowrap; }
+.eyebrow::before { content: ''; width: 26px; height: 1px; background: #509f38; flex-shrink: 0; }
+.column, .connected { padding-top: 19px; min-width: 0; }
+.column > a { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+.column > a svg { flex-shrink: 0; transition: transform .2s; }
+.column > a > span { display: flex; align-items: center; gap: 9px; }
+.column > a > span svg { color: #0067cf; }
+.qr { display: inline-block; max-width: 100%; margin-top: 20px; padding: 10px; border: 1px solid #e0e9f0; border-radius: 10px; background: #fff; }
+.qr img { display: block; width: 140px; max-width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
+.column > a:hover { color: #0067cf; }
+.column > a:hover svg { transform: translateX(3px); }
+.updateCopy { color: #6e8294; font-size: 12px; line-height: 1.75; margin-top: -6px; margin-bottom: 20px; }
+.emailLabel { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.emailField { position: relative; display: flex; align-items: stretch; }
+.emailField > svg { position: absolute; left: 13px; top: 17px; color: #59758d; pointer-events: none; }
+.emailField input { width: 100%; min-width: 0; height: 52px; border: 1px solid #cbddee; border-radius: 5px 0 0 5px; background: #ffffff94; padding: 12px 8px 12px 39px; font-size: 10px; }
+.emailField input::placeholder { color: #8296a7; }
+.emailField input:focus { outline: 2px solid #0067cf70; outline-offset: -2px; }
+.emailField button { width: 50px; flex-shrink: 0; border: 0; border-radius: 5px; background: #0067cf; color: white; display: grid; place-items: center; }
+.emailField button:hover { background: #0058b1; }
+.consent { display: flex; align-items: flex-start; gap: 9px; color: #7a8c9d; font-size: 10px; line-height: 1.75; margin-top: 15px; }
+.consent input { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; accent-color: #509f38; }
+.help { color: #7a8c9d; font-size: 9px; margin-top: 9px; }
+.status { color: #506b80; font-size: 10px; line-height: 1.7; margin-top: 10px; }
+.status a { color: #0067cf; text-decoration: underline; }
+.bottom { padding: 23px var(--gut) 15px; border-top: 1px solid #dce8f1; background: #f8fbfef0; }
+.bottomInner { max-width: 1408px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 22px; color: #7c8e9f; font-size: 10px; }
+.bottomInner small { font-size: 10px; }
+.location, .contact { display: flex; align-items: center; gap: 11px; }
+.contact:hover { color: #0067cf; }
+.backTop { display: flex; align-items: center; gap: 19px; color: #102538; }
+.backTop span { display: grid; place-items: center; width: 39px; height: 39px; border-radius: 50%; background: #e7f2ff; }
+.disclaimer { max-width: 1408px; margin: 10px auto 0; font-size: 9px; color: #94a3b0; }
+@media (max-width: 1200px) { .grid { gap: 25px; } .eyebrow { letter-spacing: .1em; font-size: 13px; gap: 8px; } .tagline { font-size: 19px; } .tagline em { font-size: 24px; } }
+@media (max-width: 900px) { .grid { grid-template-columns: 1.2fr 1fr; padding-right: 0; gap: 35px; } .main { padding-top: 55px; } .main::before { background: #ffffffbf; } .brand { max-width: 330px; } .connected { max-width: 360px; } .bottomInner { flex-wrap: wrap; } }
+@media (max-width: 520px) { .grid { grid-template-columns: 1fr 1fr; gap: 25px 20px; } .brand, .connected { grid-column: 1 / -1; } .column { padding-top: 0; } .eyebrow { margin-bottom: 20px; } .column > a { font-size: 13px; } .bottomInner { align-items: flex-start; gap: 18px; } .bottomInner small { flex-basis: 100%; } .backTop { flex-basis: 100%; justify-content: space-between; } }
+@media (prefers-reduced-motion: reduce) { .socials a, .column > a svg { transition: none; } .socials a:hover, .column > a:hover svg { transform: none; } }
+
+
+@media (max-width: 520px) { .eyebrow { white-space: normal; } }

@@ -1,0 +1,13 @@
+.bar { position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); z-index: 55; display: flex; flex-direction: column; gap: 12px; }
+.secondary { display: flex; flex-direction: column; gap: inherit; animation: contact-fade-in .45s ease-out both; }
+.secondary[hidden] { display: none; }
+@keyframes contact-fade-in { from { opacity: 0; } to { opacity: 1; } }
+.bar a { display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #ffffff14; border-radius: 50%; color: #d5d5d5; background: #101010; box-shadow: 0 4px 15px #0000001a; transition: transform .25s, color .25s, background .25s; }
+.bar a:hover { color: white; background: #242424; transform: translateY(-3px); }
+.secondary a { color: #000000; background: #ffffff6e; border: 1px solid #696d8236; border-radius: 50%; place-items: center; width: 44px; height: 44px; }
+.secondary a:hover { color: #000000; background: #ffffffb3; }
+.bar .whatsapp { width: 58px; height: 58px; color: #b6c6bc; background: #159447; border-color: #26c66c55; box-shadow: 0 5px 22px #15944745; }
+.bar .whatsapp:hover { background: #12833e; }
+.bar a:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 4px; }
+@media (max-width: 599px) { .bar { right: 12px; bottom: max(16px, env(safe-area-inset-bottom)); gap: 8px; } .bar a { width: 44px; height: 44px; } .bar .whatsapp { width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .secondary { animation: none; } .bar a { transition: none; } .bar a:hover { transform: none; } }

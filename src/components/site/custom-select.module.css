@@ -1,0 +1,13 @@
+.root { position: relative; }
+.trigger { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 50px; padding: 12px 13px 12px 42px; border: 1px solid #dce4e9; border-radius: 5px; background: #fcfdfe; color: var(--navy); font-size: 13px; text-align: left; }
+.trigger > span { min-width: 0; }
+.trigger svg { flex: none; color: #748a9d; transition: transform .2s; }
+.rotated { transform: rotate(180deg); }
+.trigger:focus-visible { outline: none; border-color: var(--brand-blue); box-shadow: 0 0 0 3px #0067cf18; }
+.list { position: absolute; z-index: 20; top: calc(100% + 7px); left: 0; right: 0; max-height: 260px; overflow-y: auto; display: grid; gap: 3px; padding: 6px; border: 1px solid #e4e9ef; border-radius: 14px; background: #fff; box-shadow: 0 12px 28px #10253820; }
+.list button { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; padding: 12px 11px; border-radius: 9px; font-size: 14px; line-height: 1.45; text-align: left; color: var(--navy); }
+.list button svg { flex: none; }
+.list button[aria-selected="true"] { background: #f1f5fb; color: var(--brand-blue); font-weight: 600; }
+.list button:hover:not(:disabled), .list button:focus-visible { background: #f5f7fa; outline: none; box-shadow: inset 0 0 0 1px #b7cee4; }
+.list button:disabled { opacity: .45; cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .trigger svg { transition: none; } }
