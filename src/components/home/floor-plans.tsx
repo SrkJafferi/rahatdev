@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { AnimatedHeading } from '@/components/motion/animated-heading';
 import { useRef, useState } from 'react';
-import { Building2, ChevronRight, Download, FileText, Info, Layers3, Maximize2, ScanLine } from 'lucide-react';
+import { Building2, ChevronRight, Download, FileText, Layers3, Maximize2, ScanLine } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { floorPlans } from '@/data/floor-plans';
 import { Lightbox } from '@/components/site/dialogs';
@@ -74,7 +74,6 @@ export function FloorPlans() {
             <div className={styles.visualFooter}><p className={styles.caption}>{plan.title}<span>Developer brochure · p. {plan.page}</span></p><button className={styles.zoom} onClick={() => setExpanded(true)} aria-label={`Enlarge ${project.name} ${plan.title}`}><Maximize2 size={18} /> Enlarge plan</button></div>
           </div>
         </div>
-        <p className={styles.note}><Info size={16} /> <span>Layouts are reproduced from the supplied project brochures. Dimensions and specifications vary by unit; confirm the current layout with Rahat Associates.</span></p>
       </div>
       <Lightbox items={plans.map((item) => ({ ...item, title: `${project.name} — ${item.title}`, kind: `Original brochure · page ${item.page}` }))} index={expanded ? planIndex : -1} onClose={() => setExpanded(false)} onMove={(direction) => setPlanIndex((planIndex + direction + plans.length) % plans.length)} />
     </section>

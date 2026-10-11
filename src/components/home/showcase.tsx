@@ -13,6 +13,11 @@ import styles from './showcase.module.css';
 
 registerMotion();
 const pad = (value: number) => String(value).padStart(2, '0');
+const chapterHeadings = [
+  { lead: 'Developments that', accent: 'define our vision.' },
+  { lead: 'Smarter Spaces', accent: 'for Living & Business.' },
+  { lead: 'A New Chapter', accent: 'in Modern Living.' },
+];
 
 /** Foreground chapters scroll away, uncovering the stationary chapter underneath. */
 export function Showcase() {
@@ -90,7 +95,7 @@ export function Showcase() {
                       <button onClick={() => navigate(Math.min(projects.length - 1, index + 1))} disabled={index === projects.length - 1} aria-label="Next project"><ChevronRight size={20} /></button>
                     </div>
                   </div>
-                  <AnimatedHeading scrollControlled={index > 0} id={index === 0 ? 'projects-title' : undefined}>Developments that<br /><span className="heading-accent">define our vision.</span></AnimatedHeading>
+                  <AnimatedHeading scrollControlled={index > 0} id={index === 0 ? 'projects-title' : undefined}>{chapterHeadings[index].lead}<br /><span className="heading-accent">{chapterHeadings[index].accent}</span></AnimatedHeading>
                   <p className={styles.introduction}>Residential and commercial spaces across Faisal Margalla City, Bahria Enclave and Grand City, Kharian. Discover the Rahat Associates portfolio.</p>
                 </header>
               <div className={styles.info}>

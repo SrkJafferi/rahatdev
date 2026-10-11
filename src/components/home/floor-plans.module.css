@@ -18,7 +18,7 @@
 .tabs button[aria-selected=true]:hover { background: var(--blue-deep); }
 .panel { display: grid; grid-template-columns: 32% minmax(0, 1fr); gap: 32px; align-items: start; }
 .details { padding-top: 24px; }
-.details h3 { font-family: var(--font-editorial), Georgia, serif; font-size: clamp(31px, 3.3vw, 52px); line-height: 1.16; margin: 12px 0 18px; letter-spacing: -.025em; }
+.details h3 { font-family: "Involve", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 47px; line-height: 1.16; margin: 12px 0 18px; letter-spacing: -.025em; }
 .location { color: var(--brand-blue); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
 .copy { color: var(--neutral); font-size: 14px; line-height: 1.85; max-width: 53ch; }
 .selector { position: relative; z-index: 5; display: block; padding: 17px 20px; background: #ffffffd9; border: 1px solid #e8edf1; border-radius: 13px; box-shadow: 0 13px 26px #10253806; margin-top: 28px; }

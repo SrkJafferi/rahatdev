@@ -77,9 +77,9 @@ export function Quotation() {
             <AnimatedHeading>Find Your<br /><em>Ideal Property.</em></AnimatedHeading>
             <p className={styles.introduction}>Explore residential and commercial opportunities across our developments. Share your requirements and connect with our team for property information, pricing and availability.</p>
             <ul className={styles.highlights}>
-              <li><span><Building2 size={25} /></span><div>Residential &amp;<br />Commercial<small>Apartments, shops &amp; offices</small></div></li>
-              <li><span><MapPin size={25} /></span><div>Project-Specific<br />Enquiries<small>Get details for your preferred project</small></div></li>
-              <li><span><UserRound size={25} /></span><div>Personalized<br />Assistance<small>Our team is here to help</small></div></li>
+              <li><span><Building2 size={25} /></span><div><span className={styles.highlightTitle}>Residential &amp; Commercial</span><small>Apartments, shops &amp; offices</small></div></li>
+              <li><span><MapPin size={25} /></span><div><span className={styles.highlightTitle}>Project-Specific Enquiries</span><small>Get details for your preferred project</small></div></li>
+              <li><span><UserRound size={25} /></span><div><span className={styles.highlightTitle}>Personalized Assistance</span><small>Our team is here to help</small></div></li>
             </ul>
           </div>
         </div>

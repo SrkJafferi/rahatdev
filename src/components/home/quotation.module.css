@@ -11,11 +11,12 @@
 .visual h2 em { font-family: var(--font-editorial), Georgia, serif; font-weight: 600; color: #0067cf; white-space: nowrap; }
 .introduction { margin-top: 22px; font-size: 15px; line-height: 1.85; color: #000000; max-width: 40ch; }
 .highlights { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 18px; }
-.highlights li { display: flex; align-items: center; gap: 18px; font-size: 15px; font-weight: 500; line-height: 1.4; }
+.highlights li { display: flex; align-items: center; gap: 18px; font-size: 17px; font-weight: 500; line-height: 1.3; }
 .highlights li > span { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #e6f5eb; color: #509f38; flex-shrink: 0; }
 .highlights li:nth-child(2) > span { color: #0067cf; background: #e4f4ff; }
 .highlights li:nth-child(3) > span { color: #0067cf; background: #e8edff; }
-.highlights small { display: block; font-size: 13px; font-weight: 500; color: #4e4e4e; margin-top: 6px; }
+.highlights small { display: block; font-size: 14px; font-weight: 500; color: #4e4e4e; margin-top: 6px; }
+.highlightTitle { white-space: nowrap; }
 .formPanel { position: relative; isolation: isolate; overflow: hidden; padding: clamp(28px, 3vw, 48px); min-width: 0; background: #fff; border: 1px solid #fff; border-radius: 18px; box-shadow: 0 20px 45px #10253812; }
 .formPanel::before { content: ''; position: absolute; z-index: -1; width: 600px; height: 600px; border-radius: 50%; right: -420px; top: 70px; background: #edf5fb55; pointer-events: none; }
 .formPanel h2 { font-family: var(--font-heading), sans-serif; font-size: clamp(29px, 2.7vw, 44px); line-height: 1.2; letter-spacing: -.035em; margin-top: 17px; }
