@@ -7,19 +7,33 @@ import { SmoothScroll } from '@/components/motion/smooth-scroll';
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-body', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], weight: '600', style: ['normal', 'italic'], variable: '--font-editorial', display: 'swap' });
 
+const siteUrl = new URL(
+  process.env.SITE_URL ||
+    (process.env.VERCEL_ENV === 'production' && process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : 'https://rahatassociates.pk'),
+);
+const siteTitle = 'Rahat Associates | Residential & Commercial Developments';
+const siteDescription = 'Explore apartments, shops and offices at Rahat Heights, Smart One Heights 2 and Rahat Heights II in Islamabad and Kharian. Enquire directly with Rahat Associates.';
+const socialImage = new URL('/og-image.jpg', siteUrl).href;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || 'http://127.0.0.1:3000'),
-  title: 'Rahat Associates — Spaces that inspire. Developments that endure.',
-  description:
-    'Rahat Associates develops residential and commercial addresses: Rahat Heights in Faisal Margalla City, Smart One Heights 2 in Bahria Enclave, Islamabad, and Rahat Heights II in Grand City, Kharian.',
+  metadataBase: siteUrl,
+  title: siteTitle,
+  description: siteDescription,
   robots: { index: false, follow: false },
   openGraph: {
-    title: 'Rahat Associates | Estate & Builders',
-    description: 'Three developments. One considered vision.',
+    title: siteTitle,
+    description: siteDescription,
+    siteName: 'Rahat Associates',
+    locale: 'en_PK',
+    url: siteUrl.href,
     type: 'website',
-    images: [{ url: '/media/smart-one-exterior.webp', width: 1139, height: 641 }],
+    images: [{ url: socialImage, secureUrl: socialImage, width: 1200, height: 675, type: 'image/jpeg', alt: 'Rahat Associates — Find Your Perfect Space. For Living or Investment.' }],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: { card: 'summary_large_image', title: siteTitle, description: siteDescription, images: [{ url: socialImage, alt: 'Rahat Associates — Find Your Perfect Space.' }] },
   icons: { icon: '/media/logo.png' },
 };
 

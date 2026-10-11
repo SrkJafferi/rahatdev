@@ -31,6 +31,8 @@ Enquiry forms prepare a message for the visitor to review and send through Whats
 
 ## Vercel
 
-Import the GitHub repository, select Next.js, leave the root directory at repository root, and use `npm run build`. Set `SITE_URL` to the deployment's public URL for metadata. No other environment variables are required.
+Import the GitHub repository, select Next.js, leave the root directory at repository root, and use `npm run build`. Set `SITE_URL` to the public domain when connecting it. Metadata otherwise uses Vercel's deployment URL (production alias on production builds), falling back to `https://rahatassociates.pk`. No other environment variables are required.
+
+Social sharing uses the supplied 1200 × 675 JPEG at `/og-image.jpg` with server-rendered Open Graph and Twitter tags. The deployment and image must be publicly accessible without login for WhatsApp and other sharing crawlers.
 
 Search indexing is intentionally disabled while this homepage is a preview. Review indexing and metadata before the public production launch.
