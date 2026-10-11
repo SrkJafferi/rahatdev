@@ -93,7 +93,7 @@ export type Service = {
   id: string;
   title: string;
   copy: string;
-  /** Service card imagery supplied in reference/ (service1–service6 AVIF files). */
+  /** Service card imagery supplied in reference/. */
   image: string;
   focus: string;
   projectId: ProjectId;
@@ -109,7 +109,7 @@ export const services: Service[] = [
     id: 'residential-developments',
     title: 'Residential Developments',
     copy: 'Apartments and penthouses planned around daylight, storage and the way a household actually moves through a day.',
-    image: '/media/service6.avif',
+    image: '/media/residential-developments.avif',
     focus: 'center',
     projectId: 'rahat-heights',
     icon: 'home',
@@ -122,7 +122,7 @@ export const services: Service[] = [
     id: 'commercial-developments',
     title: 'Commercial Developments',
     copy: 'Street-level shops, retail frontage and office floors in addresses planned to be found, not hidden.',
-    image: '/media/service5.avif',
+    image: '/media/commercial-developments1.avif',
     focus: 'center',
     projectId: 'smart-one-heights-2',
     icon: 'commercial',
@@ -135,7 +135,7 @@ export const services: Service[] = [
     id: 'real-estate-development',
     title: 'Real Estate Development',
     copy: 'Mixed-use addresses developed end to end across Faisal Margalla City, Bahria Enclave and Grand City, Kharian.',
-    image: '/media/service3.avif',
+    image: '/media/service5.avif',
     focus: 'center',
     projectId: 'rahat-heights-ii',
     icon: 'development',
@@ -161,7 +161,7 @@ export const services: Service[] = [
     id: 'project-consultation',
     title: 'Project Consultation',
     copy: 'Guidance on layouts, unit types and current availability before you commit to a space.',
-    image: '/media/service1.avif',
+    image: '/media/project-consultation.avif',
     focus: 'center',
     projectId: 'rahat-heights-ii',
     icon: 'consultation',

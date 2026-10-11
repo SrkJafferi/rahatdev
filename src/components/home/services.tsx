@@ -142,7 +142,7 @@ export function Services() {
                 <div className={styles.visual}>
                   <div className={styles.frame} aria-hidden="true" />
                   <div className={styles.media}>
-                    <Image data-service-image src={service.image} alt={`${service.title} — representative image`} fill sizes="(max-width: 899px) 90vw, 46vw" quality={90} style={{ objectPosition: service.focus }} />
+                    <Image data-service-image src={service.image} alt={`${service.title} — representative image`} fill sizes="(max-width: 899px) 90vw, 46vw" unoptimized={service.image.endsWith('.avif')} style={{ objectPosition: service.focus }} />
                     <div className={styles.badge} data-service-badge>
                       <span className={styles.badgeIcon} aria-hidden="true"><ServiceIcon size={28} strokeWidth={1.4} /></span>
                       <div><p>{service.captionLabel}</p><span>{service.caption}</span></div>
