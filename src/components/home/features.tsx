@@ -76,12 +76,11 @@ export function Features() {
           scrollPageTo(Math.max(range.start, Math.min(range.end, window.scrollY + (event.key === 'ArrowRight' ? step : -step))));
         }}>
         <div className={styles.track} ref={track}>
-          {propertyFeatures.map((feature, index) => {
+          {propertyFeatures.map((feature) => {
             const Icon = icons[feature.icon];
             return (
               <article className={styles.feature} key={feature.title}>
                 <span className={styles.iconDisc}><Icon className={styles.icon} size={48} strokeWidth={1.65} aria-hidden="true" /></span>
-                <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{feature.title}</h3>
                 <p>{feature.copy}</p>
                 <a className={styles.cardLink} href={projects[0].brochure} target="_blank" rel="noopener noreferrer" aria-label={`${feature.title}, view Rahat Heights brochure`}><ArrowRight size={20} /></a>

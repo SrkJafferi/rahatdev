@@ -10,7 +10,7 @@
 
 /* ============================================================
    RAHAT ASSOCIATES — homepage design system
-   Brand blue #0067CF · brand green #509F38 · deep navy #102538
+   Brand blue #0067CF · brand green #509F38 · deep navy #0e2132
    Official logo colours are fixed and must not be altered.
    ============================================================ */
 
@@ -18,10 +18,10 @@
   /* Official logo colours — exact values. */
   --brand-blue: #0067cf;
   --brand-green: #509f38;
-  --navy: #102538;
+  --navy: #0e2132;
   --white: #ffffff;
   --off-white: #f5f8fa;
-  --neutral: #667781;
+  --neutral: #1e2022;
 
   /* Derived surfaces and tints. */
   --ink: var(--navy);
@@ -149,7 +149,7 @@ ul { margin: 0; padding: 0; list-style: none }
 .brand { display: block; line-height: 0; width: clamp(148px, 14vw, 196px); transition: width .45s; flex: none }
 .brand img { width: 100%; height: auto }
 .header-nav { display: flex; align-items: center; gap: clamp(14px, 1.5vw, 24px); margin-left: auto; white-space: nowrap }
-.header-nav a { position: relative; padding: 6px 0; font-size: 14px; opacity: .78; transition: opacity .3s, color .3s }
+.header-nav a { position: relative; padding: 6px 0; font-size: 14px; opacity: 1; font-weight: 500; transition: opacity .3s, color .3s }
 .header-nav a::after {
   content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
   background: var(--brand-blue); transform: scaleX(0); transform-origin: 0 50%; transition: transform .4s;
@@ -166,8 +166,8 @@ ul { margin: 0; padding: 0; list-style: none }
 .header-cta:hover { transform: translateY(-2px); box-shadow: inset 0 1px 2px #ffffff75, 0 10px 22px #0067cf40 }
 .header-actions { display: flex; align-items: center; gap: 20px; flex: none }
 .header-socials { display: flex; gap: 10px; padding: 9px 0 }
-.header-socials a { display: grid; place-items: center; width: 38px; height: 38px; color: inherit; opacity: .78; transition: opacity .25s, color .25s, transform .25s }
-.header-socials a:hover { opacity: 1; color: var(--brand-blue); transform: translateY(-2px) }
+.header-socials a { display: grid; place-items: center; width: 38px; height: 38px; color: #1e2022; opacity: .78; transition: opacity .25s, color .25s, transform .25s }
+.header-socials a:hover { opacity: 1; color: #1e2022; transform: translateY(-2px) }
 .header-cta:focus-visible, .header-socials a:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 4px }
 .is-stuck {
   position: fixed; border-bottom: 1px solid var(--line);
@@ -208,7 +208,7 @@ ul { margin: 0; padding: 0; list-style: none }
 .hero-cloud-right { left: 0; top: 7%; width: min(577px, 40.6vw); animation-duration: 100s; animation-delay: -60s }
 @keyframes hero-cloud-drift { from { transform: translateX(-110%) } to { transform: translateX(calc(100vw + 110%)) } }
 @media (prefers-reduced-motion: reduce) { .hero-cloud { animation: none; will-change: auto; } .hero-cloud-right { left: 55%; } .hero-overview > span { transition: none; } }
-.hero-marquee { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; opacity: .7; padding-bottom: 10px; text-shadow: 0 2px 20px #10253835 }
+.hero-marquee { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; opacity: .7; padding-bottom: 10px; text-shadow: 0 2px 20px #0e213235 }
 .hero-marquee-track { display: flex; width: max-content; will-change: transform; animation: hero-marquee 130s linear infinite }
 .hero-marquee-set { display: flex }
 .hero-marquee-item {
@@ -236,7 +236,7 @@ ul { margin: 0; padding: 0; list-style: none }
 .hero-title .hero-rotating-line > span { font-family: var(--font-editorial), Georgia, serif; font-style: italic; font-weight: 600; font-size: 56px; white-space: nowrap; color: var(--navy); }
 .hero-title .line:last-child { color: var(--navy) }
 .hero-lede {
-  max-width: 47ch; margin-top: 25px; color: #6e7e90; font-size: clamp(15px, 1.2vw, 19px); line-height: 1.65;
+  max-width: 47ch; margin-top: 25px; color: #1e2022; font-size: clamp(15px, 1.2vw, 19px); line-height: 1.65;
   text-wrap: pretty;
   text-shadow: none;
 }
@@ -248,10 +248,10 @@ ul { margin: 0; padding: 0; list-style: none }
 .hero-overview > span { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid #0067cf75; border-radius: 50%; background: #ffffff75; color: var(--brand-blue); transition: background .25s }
 .hero-overview:hover > span { background: white }
 .hero-highlights { display: flex; align-items: center; gap: 20px; list-style: none; padding: 0; margin-top: 42px; color: var(--navy) }
-.hero-highlights li { display: flex; align-items: center; gap: 11px; font-size: 13px; line-height: 1.6 }
+.hero-highlights li { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 500; line-height: 1.6 }
 .hero-highlights li + li { border-left: 1px solid #cbd7e1; padding-left: 20px }
 .hero-highlights svg { flex-shrink: 0; color: #509f38 }
-.hero-highlights small { font-size: inherit; color: #6e7e90 }
+.hero-highlights small { font-size: inherit; color: #1e2022 }
 .hero-actions .text-link {
   color: var(--navy); font-weight: 600;
   text-shadow: none;

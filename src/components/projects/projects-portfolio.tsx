@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { ArrowRight, Building2, MapPin, MessageCircle, ShieldCheck, Dumbbell, Layers3, CarFront, Expand, Check, House, UsersRound } from 'lucide-react';
+import { ArrowRight, Building2, MapPin, MessageCircle, ShieldCheck, Dumbbell, Layers3, CarFront, Expand, Check, UsersRound } from 'lucide-react';
 import { Lightbox } from '@/components/site/dialogs';
 import { Reveal } from '@/components/motion/reveal';
 import { portfolioProjects, type PortfolioProject } from '@/data/project-portfolio';
@@ -26,8 +26,8 @@ export function ProjectsPortfolio() {
   return <main id="main" className={styles.page}>
     <section className={styles.hero} id="home" aria-labelledby="projects-title">
       <div className={styles.horizon} aria-hidden="true"><Image src="/media/projects-sunset-hero.webp" alt="" fill sizes="100vw" quality={90} loading="eager" fetchPriority="high" /></div>
-      <div className={styles.heroInner}><div aria-hidden="true" style={{ height: 22 }} /><p className={styles.eyebrow}>Our developments</p><h1 id="projects-title">Developments<br /><span>Designed <em>Around You.</em></span></h1><p className={styles.heroCopy}>Explore Rahat Associates&apos; residential and commercial developments across Islamabad and Kharian, bringing spaces for living and business together.</p><ul className={styles.heroFeatures}><li><Building2 /><span><strong>Prime Locations</strong><small>Connected communities</small></span></li><li><House /><span><strong>Modern Design</strong><small>Quality construction</small></span></li><li><UsersRound /><span><strong>Greater Value</strong><small>For a stronger tomorrow</small></span></li></ul></div>
-      <div className={styles.heroBadge}>{[{ label: 'Prime Locations', icon: MapPin }, { label: 'Modern Design', icon: Building2 }, { label: 'Stronger Communities', icon: UsersRound }].map(({ label, icon: Icon }) => <div key={label}><span><Icon /></span><strong>{label}<i /></strong></div>)}</div>
+      <div className={styles.heroInner}><div aria-hidden="true" style={{ height: 22 }} /><p className={styles.eyebrow}>Our developments</p><h1 id="projects-title">Developments<br /><span>Designed <em>Around You.</em></span></h1><p className={styles.heroCopy}>Explore Rahat Associates&apos; residential and commercial developments across Islamabad and Kharian, bringing spaces for living and business together.</p><ul className={styles.heroFeatures}><li><Building2 /><span><strong>Prime Locations</strong><small>Connected communities</small></span></li><li><UsersRound /><span><strong>Greater Value</strong><small>For a stronger tomorrow</small></span></li></ul></div>
+      <div className={styles.heroBadge}>{[{ label: 'Prime Locations', icon: MapPin }, { label: 'Stronger Communities', icon: UsersRound }].map(({ label, icon: Icon }) => <div key={label}><span><Icon /></span><strong>{label}<i /></strong></div>)}</div>
     </section>
     <nav className={styles.projectNav} aria-label="Project navigation">{portfolioProjects.map((p) => <a key={p.id} href={`#${p.id}`}><Image src={p.image} alt="" width={66} height={66} /><span><strong>{p.name}</strong><small>{p.location}</small></span><ArrowRight size={20} /></a>)}</nav>
     <div id="developments">{portfolioProjects.map((p, order) => {

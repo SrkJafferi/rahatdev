@@ -1,10 +1,10 @@
-.section { position: relative; isolation: isolate; overflow: hidden; background: #f5f8fa; padding: 40px var(--gut); color: #102538; scroll-margin-top: 85px; }
+.section { position: relative; isolation: isolate; overflow: hidden; background: #f5f8fa; padding: 40px var(--gut); color: #0e2132; scroll-margin-top: 85px; }
 .background { position: absolute; inset: 0; z-index: -2; }
 .background img { object-fit: cover; object-position: center; }
 .section::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #ffffffae 4%, #ffffffc9 19%, #ffffff16 47%, #f5f8fa75 100%); }
 .layout { max-width: 1408px; margin: auto; display: grid; grid-template-columns: 47% 53%; gap: 0; }
 .visual { position: relative; min-width: 0; display: flex; align-items: center; }
-.visualCopy { padding: 35px 35px 35px 40px; max-width: 520px; color: #102538; }
+.visualCopy { padding: 35px 35px 35px 40px; max-width: 520px; color: #0e2132; }
 .eyebrow { display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: .2em; font-size: 13px; font-weight: 600; }
 .eyebrow::before { content: ''; width: 26px; height: 2px; background: #509f38; }
 .visual h2 { font-family: var(--font-heading), sans-serif; font-size: 66px; line-height: 1.14; letter-spacing: -.035em; margin-top: 23px; }
@@ -17,17 +17,17 @@
 .highlights li:nth-child(3) > span { color: #0067cf; background: #e8edff; }
 .highlights small { display: block; font-size: 14px; font-weight: 500; color: #4e4e4e; margin-top: 6px; }
 .highlightTitle { white-space: nowrap; }
-.formPanel { position: relative; isolation: isolate; overflow: hidden; padding: clamp(28px, 3vw, 48px); min-width: 0; background: #fff; border: 1px solid #fff; border-radius: 18px; box-shadow: 0 20px 45px #10253812; }
+.formPanel { position: relative; isolation: isolate; overflow: hidden; padding: clamp(28px, 3vw, 48px); min-width: 0; background: #fff; border: 1px solid #fff; border-radius: 18px; box-shadow: 0 20px 45px #0e213212; }
 .formPanel::before { content: ''; position: absolute; z-index: -1; width: 600px; height: 600px; border-radius: 50%; right: -420px; top: 70px; background: #edf5fb55; pointer-events: none; }
 .formPanel h2 { font-family: var(--font-heading), sans-serif; font-size: clamp(29px, 2.7vw, 44px); line-height: 1.2; letter-spacing: -.035em; margin-top: 17px; }
 .formPanel h2 em { font-family: var(--font-editorial), Georgia, serif; color: #0067cf; font-weight: 600; }
-.support { color: #748491; font-size: 12px; line-height: 1.8; margin: 16px 0 26px; max-width: 57ch; }
+.support { color: #1e2022; font-size: 12px; line-height: 1.8; margin: 16px 0 26px; max-width: 57ch; }
 .form { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 19px 23px; }
 .field { min-width: 0; }
 .field > label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
 .inputWrap { position: relative; }
 .inputWrap > svg { position: absolute; z-index: 2; left: 14px; top: 16px; color: #7b8fa1; pointer-events: none; }
-.field input, .field select, .field textarea { width: 100%; min-width: 0; height: 50px; padding: 12px 13px 12px 42px; border: 1px solid #dce4e9; border-radius: 5px; background: #fcfdfe75; color: #102538; font-size: 11px; transition: border-color .2s, box-shadow .2s; }
+.field input, .field select, .field textarea { width: 100%; min-width: 0; height: 50px; padding: 12px 13px 12px 42px; border: 1px solid #dce4e9; border-radius: 5px; background: #fcfdfe75; color: #0e2132; font-size: 11px; transition: border-color .2s, box-shadow .2s; }
 .field select { padding-right: 25px; text-overflow: ellipsis; }
 .field textarea { height: 90px; resize: vertical; line-height: 1.7; }
 .field input::placeholder, .field textarea::placeholder { color: #97a4af; }
@@ -36,7 +36,7 @@
 .full { grid-column: 1 / -1; }
 .hint { display: block; color: #8998a4; font-size: 9px; line-height: 1.6; margin-top: 6px; }
 .error { font-size: 10px; line-height: 1.6; color: #a8392d; margin-top: 6px; }
-.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 10px; line-height: 1.75; color: #748491; }
+.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 10px; line-height: 1.75; color: #1e2022; }
 .consent input { accent-color: #509f38; width: 15px; height: 15px; margin-top: 2px; flex-shrink: 0; }
 .actions { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .actions button { display: inline-flex; align-items: center; justify-content: space-between; gap: 35px; border: 0; border-radius: 5px; padding: 16px 23px; min-height: 52px; background: #0067cf; color: white; font-size: 12px; transition: background .2s; }

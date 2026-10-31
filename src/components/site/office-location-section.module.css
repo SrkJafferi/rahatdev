@@ -5,11 +5,11 @@
 .eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--brand-green); }
 .details h2 { margin-top: 22px; font-size: clamp(38px, 3.4vw, 56px); color: var(--navy); line-height: 1.15; letter-spacing: -.035em; }
 .details h2 em { font-family: var(--font-editorial), Georgia, serif; font-style: italic; color: var(--brand-blue); }
-.intro { margin-top: 22px; max-width: 365px; font-size: 13px; line-height: 1.9; color: #728492; }
+.intro { margin-top: 22px; max-width: 365px; font-size: 14px; line-height: 1.9; color: #1e2022; }
 .addressBlock { display: flex; align-items: flex-start; gap: 15px; margin-top: 30px; padding-top: 25px; border-top: 1px solid #e0e8ee; }
 .addressBlock > svg { color: var(--brand-blue); flex: none; margin-top: 2px; }
-.label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #24485f; }
-.addressBlock address { margin-top: 10px; font-size: 12px; line-height: 1.85; color: #6b8090; font-style: normal; }
+.label { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #24485f; }
+.addressBlock address { margin-top: 10px; font-size: 13px; line-height: 1.85; color: #1e2022; font-style: normal; }
 .addressBlock address > span { display: block; }
 .directions { display: inline-flex; align-items: center; justify-content: space-between; gap: 34px; margin-top: 27px; padding: 15px 22px; border: 1px solid var(--brand-blue); border-radius: 5px; background: var(--brand-blue); color: #fff; font-size: 12px; font-weight: 500; transition: background .3s, transform .3s; }
 .directions svg { transition: transform .3s; }

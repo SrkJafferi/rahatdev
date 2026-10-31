@@ -8,7 +8,7 @@
 }
 .surface::before { content: ''; position: absolute; z-index: -1; width: 65%; height: 140%; left: -15%; top: -20%; border: 1px solid #edf3f7; border-radius: 50%; pointer-events: none; clip-path: inset(14.4% 0 14.4% 23%); }
 .text { position: relative; z-index: 2; }
-.eyebrow { display: flex; align-items: center; gap: 22px; font-size: 13px; text-transform: uppercase; letter-spacing: .26em; color: #7b8c98; font-weight: 500; }
+.eyebrow { display: flex; align-items: center; gap: 22px; font-size: 13px; text-transform: uppercase; letter-spacing: .26em; color: #1e2022; font-weight: 500; }
 .eyebrow::before { content: ''; width: 58px; height: 2px; flex: none; background: #509f38; }
 .titleRow { display: flex; align-items: center; gap: 22px; margin-top: 26px; }
 .serviceIcon { position: relative; flex: none; display: grid; place-items: center; width: 60px; aspect-ratio: 1; background: #edf5fe; border-radius: 13px; color: var(--brand-blue); }
@@ -16,11 +16,11 @@
 .serviceIcon > span { position: absolute; width: 11px; height: 11px; border: 2px solid #509f38; border-radius: 50%; right: 16%; bottom: 20%; background: #edf5fe; }
 .title { font-size: 34px; line-height: 1.04; letter-spacing: -.025em; color: var(--navy); text-wrap: balance; }
 .rule { display: block; height: 1px; width: 100%; background: #e1e9ef; margin: 24px 0 19px; }
-.copy { font-size: clamp(14px, 1.12vw, 20px); line-height: 1.65; color: #7b8c98; max-width: 49ch; }
+.copy { font-size: clamp(14px, 1.12vw, 20px); line-height: 1.65; color: #1e2022; max-width: 49ch; }
 .features { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 26px; }
 .features li { display: flex; align-items: center; gap: 9px; min-height: 54px; padding: 10px; border-radius: 13px; background: #f7fafd; border-bottom: 1px solid #eaf0f5; }
 .features svg { flex: none; color: var(--brand-blue); width: 23px; }
-.features span { color: var(--navy); font-size: clamp(10px, .68vw, 12px); line-height: 1.45; }
+.features span { color: var(--navy); font-size: 12px; line-height: 1.45; }
 .actions { display: flex; align-items: center; gap: 26px; margin-top: 30px; }
 .primary { display: inline-flex; align-items: center; justify-content: center; gap: 22px; padding: 17px 24px; border-radius: 40px; background: var(--brand-blue); color: white; font-size: clamp(12px, .92vw, 16px); font-weight: 500; box-shadow: 0 12px 24px -14px #0067cf70; transition: background .25s; }
 .primary:hover { background: var(--blue-deep); }
@@ -36,7 +36,7 @@
 .media > img { object-fit: cover; }
 .badge { position: absolute; display: flex; align-items: center; gap: 15px; left: 4%; bottom: 6%; max-width: 91%; padding: 10px 22px 10px 10px; border-radius: 60px; background: #fffffff2; box-shadow: 0 8px 22px #16334a0c; }
 .badgeIcon { display: grid; place-items: center; flex: none; width: 55px; height: 55px; border-radius: 50%; color: var(--navy); background: white; }
-.badge p { font-size: clamp(8px, .58vw, 10px); text-transform: uppercase; color: #6b7d8d; letter-spacing: .12em; margin-bottom: 3px; }
+.badge p { font-size: 12px; font-weight: 500; text-transform: uppercase; color: #1e2022; letter-spacing: .12em; margin-bottom: 3px; }
 .badge div > span { display: block; font-family: var(--font-heading); font-size: clamp(15px, 1.2vw, 21px); line-height: 1.4; color: var(--navy); }
 .shade { position: absolute; z-index: 3; inset: 0; border-radius: inherit; background: #183e5d; pointer-events: none; opacity: 0; }
 @media (min-width: 900px) and (max-width: 1180px) {
@@ -56,9 +56,7 @@
   .title { font-size: clamp(28px, 4.8vw, 34px); }
   .titleRow { margin-top: 20px; }
   .copy { font-size: 15px; }
-  .features span { font-size: 11px; }
   .primary, .secondary { font-size: 13px; }
-  .badge p { font-size: 8px; }
   .badge div > span { font-size: 17px; }
   .media { border-radius: 18px; }
 }
@@ -76,7 +74,6 @@
   .badgeIcon { width: 36px; height: 36px; }
   .badgeIcon svg { width: 23px; }
   .badge div > span { font-size: 13px; }
-  .badge p { font-size: 7px; }
   .media { aspect-ratio: 1.2; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -11,15 +11,15 @@
 .content h2 em { display: inline-block; color: var(--brand-blue); font-family: var(--font-editorial), Georgia, serif; font-size: 1.4em; line-height: .98; font-weight: 600; letter-spacing: -.04em; }
 .banner { display: inline-block; margin-top: 19px; padding: 4px 20px 7px; background: #2a7c25; border-radius: 14px; font-size: clamp(26px, 3.05vw, 48px); line-height: 1.3; letter-spacing: -.035em; color: white; white-space: nowrap; }
 .banner strong { font-weight: 700; }
-.intro { margin-top: 15px; color: #626d81; font-size: clamp(14px, 1.23vw, 20px); line-height: 1.45; letter-spacing: -.02em; }
+.intro { margin-top: 15px; color: #626d81; font-size: 16px; line-height: 1.45; letter-spacing: -.02em; }
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 29px; margin-left: -7.5%; }
 .card { position: relative; display: grid; grid-template-columns: 72px minmax(0,1fr); align-items: start; gap: 20px; min-height: 165px; height: 100%; padding: 18px 40px 22px 20px; border: 1px solid #fff; border-radius: 15px; background: #ffffffdc; box-shadow: 0 6px 24px #0067cf04; --card-accent: #0073ef; transition: transform .3s, box-shadow .3s; }
 .green { --card-accent: #399c29; }
-.icon { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(145deg,#087df3,#0050b7); color: white; }
+.icon { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(145deg,#087df3,#0050b7); color: white; }
 .green .icon { background: linear-gradient(145deg,#48b52e,#228619); }
 .cardCopy { position: relative; z-index: 1; padding-top: 8px; }
 .card h3 { font-family: var(--font-body),sans-serif; font-weight: 600; font-size: clamp(16px, 1.35vw, 22px); line-height: 1.12; letter-spacing: -.025em; color: #0a223a; }
-.cardCopy > p { margin-top: 10px; color: #526179; font-size: clamp(11px, .88vw, 14px); line-height: 1.35; }
+.cardCopy > p { margin-top: 10px; color: #1e2022; font-size: 15px; line-height: 1.35; }
 .line { display: block; margin-top: 16px; width: 27px; height: 2px; background: var(--card-accent); }
 .questionMark { position: absolute; top: 0; right: 18px; color: #eff6ff; font-size: 102px; font-family: var(--font-body),sans-serif; font-weight: 600; line-height: 1; pointer-events: none; }
 .arrow { position: absolute; right: 17px; bottom: 29px; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--card-accent); border-radius: 50%; color: var(--card-accent); transition: transform .3s; }
@@ -38,7 +38,7 @@
 @media (min-width: 1700px) { .main { min-height: 800px; } }
 @media (min-width: 900px) and (max-width: 1250px) {
   .card { grid-template-columns: 50px minmax(0,1fr); gap: 12px; padding-left: 14px; }
-  .icon { width: 50px; height: 50px; }
+  .icon { width: 68px; height: 68px; }
   .icon svg { width: 28px; }
   .bottom { padding-inline: 3%; }
   .bottom > p { padding-left: 20px; }
@@ -51,7 +51,7 @@
   .visual { position: relative; order: 2; width: 80%; height: 460px; margin-bottom: 30px; }
   .content h2 { font-size: clamp(35px,6vw,55px); }
   .banner { font-size: clamp(25px,4.4vw,40px); }
-  .intro { font-size: 15px; }
+  .intro { font-size: 16px; }
   .cards { margin-left: 0; }
   .bottom { flex-direction: column; align-items: flex-start; padding: 30px; }
   .bottom > p { font-size: 24px; padding-left: 20px; }
@@ -59,13 +59,12 @@
 @media (max-width: 599px) {
   .content h2 { font-size: clamp(29px,7.8vw,42px); }
   .banner { font-size: clamp(21px,5.8vw,30px); padding-inline: 14px; border-radius: 10px; }
-  .intro { font-size: 12px; }
+  .intro { font-size: 16px; }
   .desktopBreak { display: none; }
   .cards { grid-template-columns: 1fr; gap: 14px; }
   .card { min-height: 160px; grid-template-columns: 65px minmax(0,1fr); gap: 17px; }
-  .icon { width: 65px; height: 65px; }
+  .icon { width: 68px; height: 68px; }
   .card h3 { font-size: 20px; }
-  .cardCopy > p { font-size: 12px; }
   .visual { width: 94%; height: 410px; }
   .bottom > p { font-size: 20px; }
   .actions { flex-direction: column; align-items: stretch; width: 100%; }
