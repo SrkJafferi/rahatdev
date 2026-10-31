@@ -134,7 +134,7 @@ export function Lightbox({
     <Modal
       open={Boolean(active)}
       close={onClose}
-      label={active ? `${active.title} — ${active.kind}` : 'Project image'}
+      label={active ? `${active.title}, ${active.kind}` : 'Project image'}
       className="lightbox"
       onArrow={onMove}
     >

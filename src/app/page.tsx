@@ -8,6 +8,7 @@ import { Features } from '@/components/home/features';
 import { FloorPlans } from '@/components/home/floor-plans';
 import { Quotation } from '@/components/home/quotation';
 import { FloatingContact } from '@/components/site/floating-contact';
+import { InstagramReels } from '@/components/home/instagram-reels';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Showcase />
         <Features />
         <FloorPlans />
+        <InstagramReels />
         <Quotation />
       </main>
       <Footer />

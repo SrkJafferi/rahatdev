@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 import { gsap, registerMotion, ScrollTrigger } from './motion';
 
@@ -18,6 +19,47 @@ export function scrollPageTo(target: number | HTMLElement) {
 }
 
 export function SmoothScroll() {
+  const pathname = usePathname();
+
+  // An incoming homepage anchor is measured before its pinned sections mount.
+  // Resolve it again after the route and GSAP geometry settle. Same-page anchor
+  // clicks continue to use the existing Lenis behavior below.
+  useEffect(() => {
+    if (pathname !== '/' || !window.location.hash) return;
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (!target) return;
+    let cancelled = false;
+    let frame = 0;
+    const align = () => {
+      if (cancelled) return;
+      if (scroller) {
+        scroller.resize();
+        scroller.scrollTo(target, { immediate: true, force: true, offset: -88 });
+      }
+      else window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 88, behavior: 'instant' });
+    };
+    const afterRefresh = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(align); };
+    const stop = () => {
+      cancelled = true;
+      cancelAnimationFrame(frame);
+      ScrollTrigger.removeEventListener('refresh', afterRefresh);
+      for (const event of ['wheel', 'touchstart', 'keydown', 'pointerdown']) window.removeEventListener(event, stop);
+    };
+    // Existing sections refresh after images/fonts settle. Keep the destination
+    // aligned during those refreshes, but release immediately on user input.
+    ScrollTrigger.addEventListener('refresh', afterRefresh);
+    for (const event of ['wheel', 'touchstart', 'keydown', 'pointerdown']) window.addEventListener(event, stop, { passive: true });
+    const timer = window.setTimeout(stop, 3000);
+    void document.fonts.ready.then(() => {
+      if (cancelled) return;
+      frame = requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        frame = requestAnimationFrame(align);
+      });
+    });
+    return () => { stop(); window.clearTimeout(timer); };
+  }, [pathname]);
+
   useEffect(() => {
     registerMotion();
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');

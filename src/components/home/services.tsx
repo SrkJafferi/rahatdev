@@ -131,10 +131,10 @@ export function Services() {
                     })}
                   </ul>
                   <div className={styles.actions}>
-                    <ProjectButton project={project} className={styles.primary} label={`${service.action} — view ${project.name}`}>
+                    <ProjectButton project={project} className={styles.primary} label={`${service.action}, view ${project.name}`}>
                       {service.action}<ArrowRight size={20} aria-hidden="true" />
                     </ProjectButton>
-                    <a href={project.brochure} target="_blank" rel="noopener noreferrer" className={styles.secondary} aria-label={`Learn more about ${project.name} — open brochure`}>
+                    <a href={project.brochure} target="_blank" rel="noopener noreferrer" className={styles.secondary} aria-label={`Learn more about ${project.name}, open brochure`}>
                       Learn More<ArrowRight size={18} aria-hidden="true" />
                     </a>
                   </div>
@@ -142,7 +142,7 @@ export function Services() {
                 <div className={styles.visual}>
                   <div className={styles.frame} aria-hidden="true" />
                   <div className={styles.media}>
-                    <Image data-service-image src={service.image} alt={`${service.title} — representative image`} fill sizes="(max-width: 899px) 90vw, 46vw" unoptimized={service.image.endsWith('.avif')} style={{ objectPosition: service.focus }} />
+                    <Image data-service-image src={service.image} alt={`${service.title}, representative image`} fill sizes="(max-width: 899px) 90vw, 46vw" unoptimized={service.image.endsWith('.avif')} style={{ objectPosition: service.focus }} />
                     <div className={styles.badge} data-service-badge>
                       <span className={styles.badgeIcon} aria-hidden="true"><ServiceIcon size={28} strokeWidth={1.4} /></span>
                       <div><p>{service.captionLabel}</p><span>{service.caption}</span></div>

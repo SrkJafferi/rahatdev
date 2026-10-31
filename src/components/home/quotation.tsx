@@ -69,7 +69,7 @@ export function Quotation() {
 
   return (
     <section className={styles.section} id="quotation" aria-labelledby="quotation-title">
-      <div className={styles.background} aria-hidden="true"><Image src="/media/quotation-apartment-background.avif" alt="" fill sizes="100vw" /></div>
+      <div className={styles.background} aria-hidden="true"><Image src="/media/quotation-apartment-background.avif" alt="" fill sizes="100vw" quality={85} /></div>
       <div className={styles.layout}>
         <div className={styles.visual}>
           <div className={styles.visualCopy}>

@@ -84,14 +84,14 @@ export function Features() {
                 <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{feature.title}</h3>
                 <p>{feature.copy}</p>
-                <a className={styles.cardLink} href={projects[0].brochure} target="_blank" rel="noopener noreferrer" aria-label={`${feature.title} — view Rahat Heights brochure`}><ArrowRight size={20} /></a>
+                <a className={styles.cardLink} href={projects[0].brochure} target="_blank" rel="noopener noreferrer" aria-label={`${feature.title}, view Rahat Heights brochure`}><ArrowRight size={20} /></a>
               </article>
             );
           })}
         </div>
         </div>
         <div className={styles.footer}>
-        <span className={styles.address}>Rahat Heights <span>—</span> Faisal Margalla City (FMC)</span>
+        <span className={styles.address}>Rahat Heights <span>·</span> Faisal Margalla City (FMC)</span>
         <div className={styles.progress} aria-hidden="true"><span ref={progress} /></div>
         <a className={styles.source} href={projects[0].brochure} target="_blank" rel="noopener noreferrer">
           Discover Rahat Heights in the project brochure <ArrowUpRight size={15} aria-hidden="true" />

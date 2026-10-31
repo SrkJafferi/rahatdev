@@ -66,16 +66,16 @@ export function FloorPlans() {
             {plan.drawings ? <div className={styles.drawings}>
               {plan.drawings.map((drawing, index) => <figure key={drawing.image} className={styles.drawing}>
                 <figcaption><span>{String(index + 1).padStart(2, '0')}</span><h4>{drawing.title}</h4></figcaption>
-                <button className={styles.drawingImage} onClick={() => setExpanded(true)} aria-label={`Enlarge ${project.name} ${drawing.title}`}><Image src={drawing.image} alt={`${project.name} — ${drawing.title}, original brochure drawing`} fill sizes="(max-width: 600px) 80vw, 28vw" quality={90} /></button>
+                <button className={styles.drawingImage} onClick={() => setExpanded(true)} aria-label={`Enlarge ${project.name} ${drawing.title}`}><Image src={drawing.image} alt={`${project.name} · ${drawing.title}, original brochure drawing`} fill sizes="(max-width: 600px) 80vw, 28vw" quality={90} /></button>
               </figure>)}
             </div> : <button className={styles.plan} onClick={() => setExpanded(true)} aria-label={`Enlarge ${project.name} ${plan.title}`}>
-              <Image src={plan.image} alt={`${project.name} — ${plan.title}, original brochure page ${plan.page}`} fill sizes="(max-width: 600px) 90vw, (max-width: 800px) 56vw, 65vw" quality={90} />
+              <Image src={plan.image} alt={`${project.name} · ${plan.title}, original brochure page ${plan.page}`} fill sizes="(max-width: 600px) 90vw, (max-width: 800px) 56vw, 65vw" quality={90} />
             </button>}
             <div className={styles.visualFooter}><p className={styles.caption}>{plan.title}<span>Developer brochure · p. {plan.page}</span></p><button className={styles.zoom} onClick={() => setExpanded(true)} aria-label={`Enlarge ${project.name} ${plan.title}`}><Maximize2 size={18} /> Enlarge plan</button></div>
           </div>
         </div>
       </div>
-      <Lightbox items={plans.map((item) => ({ ...item, title: `${project.name} — ${item.title}`, kind: `Original brochure · page ${item.page}` }))} index={expanded ? planIndex : -1} onClose={() => setExpanded(false)} onMove={(direction) => setPlanIndex((planIndex + direction + plans.length) % plans.length)} />
+      <Lightbox items={plans.map((item) => ({ ...item, title: `${project.name} · ${item.title}`, kind: `Original brochure · page ${item.page}` }))} index={expanded ? planIndex : -1} onClose={() => setExpanded(false)} onMove={(direction) => setPlanIndex((planIndex + direction + plans.length) % plans.length)} />
     </section>
   );
 }

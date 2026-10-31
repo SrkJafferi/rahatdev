@@ -2,7 +2,7 @@
 .main { position: relative; isolation: isolate; overflow: hidden; min-height: 510px; padding: 82px var(--gut) 45px; }
 .background { position: absolute; inset: 0; z-index: -2; }
 .background img { object-fit: cover; object-position: center 76%; }
-.main::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #ffffffdb 0%, #ffffffce 55%, #ffffffb3 78%, transparent 95%); }
+.main::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(270deg, #ffffff61 0%, transparent 18%), linear-gradient(90deg, #ffffffdb 0%, #ffffffce 55%, #ffffffb3 78%, transparent 95%); }
 .grid { max-width: 1408px; margin: auto; display: grid; grid-template-columns: 1.3fr .85fr .75fr 1.15fr; gap: 42px; }
 .brand > a { display: block; width: min(100%, 260px); }
 .brand img { width: 100%; height: auto; }
@@ -16,7 +16,7 @@
 .contactDetails span { min-width: 0; overflow-wrap: anywhere; }
 .contactDetails > a:hover { color: #0067cf; }
 .socials { display: flex; gap: 12px; margin-top: 20px; }
-.socials a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #ffffffb3; color: #0067cf; border: 1px solid #e0edf7; box-shadow: 0 4px 9px #10253808; transition: background .2s, transform .2s; }
+.socials a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #ffffffe6; color: #0067cf; border: 1px solid #e0edf7; box-shadow: 0 4px 9px #10253808; transition: background .2s, transform .2s; }
 .socials a:hover { background: white; transform: translateY(-2px); }
 .copyright { margin-top: 32px; color: #738496; font-size: 10px; line-height: 1.7; text-align: center; }
 .eyebrow { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 28px; white-space: nowrap; }
@@ -34,7 +34,7 @@
 .emailLabel { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .emailField { position: relative; display: flex; align-items: stretch; }
 .emailField > svg { position: absolute; left: 13px; top: 17px; color: #59758d; pointer-events: none; }
-.emailField input { width: 100%; min-width: 0; height: 52px; border: 1px solid #cbddee; border-radius: 5px 0 0 5px; background: #ffffff94; padding: 12px 8px 12px 39px; font-size: 10px; }
+.emailField input { width: 100%; min-width: 0; height: 52px; border: 1px solid #cbddee; border-radius: 5px 0 0 5px; background: #ffffffe6; padding: 12px 8px 12px 39px; font-size: 10px; }
 .emailField input::placeholder { color: #8296a7; }
 .emailField input:focus { outline: 2px solid #0067cf70; outline-offset: -2px; }
 .emailField button { width: 50px; flex-shrink: 0; border: 0; border-radius: 5px; background: #0067cf; color: white; display: grid; place-items: center; }

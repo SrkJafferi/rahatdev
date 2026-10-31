@@ -1,13 +1,16 @@
 'use client';
 
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useState, type FormEvent } from 'react';
 import { ArrowRight, Building2, Facebook, Images, Info, Layers3, Linkedin, Mail, MapPin, MessageCircle, Phone, Sparkles, Wrench, Youtube } from 'lucide-react';
 import { contact, projects } from '@/data/projects';
 import { quotationWhatsAppUrl } from '@/lib/quotation';
+import { siteHref } from '@/lib/navigation';
 import styles from './footer.module.css';
 
-export function Footer() {
+export function Footer({ internalPage = false }: { internalPage?: boolean }) {
+  const pathname = usePathname();
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState('');
@@ -28,7 +31,7 @@ export function Footer() {
         <div className={styles.background} aria-hidden="true"><Image src="/media/footer-residence-background.avif" alt="" fill sizes="100vw" /></div>
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <a href="#home" aria-label="Rahat Associates home"><Image src="/media/logo.png" alt="Rahat Associates Estate & Builders official logo" width={800} height={300} sizes="260px" /></a>
+            <a href={siteHref('#home', internalPage)} aria-label="Rahat Associates home"><Image src="/media/logo.png" alt="Rahat Associates Estate & Builders official logo" width={800} height={300} sizes="260px" /></a>
             <p className={styles.tagline}>Creating Better Spaces.<br /><em>For Life &amp; Business.</em></p>
             <p className={styles.description}>Rahat Associates brings residential and commercial spaces together across Faisal Margalla City, Bahria Enclave and Grand City, Kharian.</p>
 
@@ -40,18 +43,18 @@ export function Footer() {
           </div>
           <nav className={styles.column} aria-label="Footer developments">
             <p className={styles.eyebrow}>Our developments</p>
-            {projects.map((project) => <a key={project.id} href="#projects"><span><Building2 size={17} strokeWidth={1.4} aria-hidden="true" />{project.name}</span><ArrowRight size={15} aria-hidden="true" /></a>)}
+            {projects.map((project) => <a key={project.id} href={siteHref('#projects', internalPage)}><span><Building2 size={17} strokeWidth={1.4} aria-hidden="true" />{project.name}</span><ArrowRight size={15} aria-hidden="true" /></a>)}
             <div className={styles.qr}><Image src="/media/qr-code.avif" alt="Rahat Associates supplied QR code" width={140} height={140} sizes="140px" unoptimized /></div>
           </nav>
           <nav className={styles.column} aria-label="Footer navigation">
             <p className={styles.eyebrow}>Explore</p>
-            <a href="#story"><span><Info size={17} strokeWidth={1.4} aria-hidden="true" />About us</span><ArrowRight size={15} aria-hidden="true" /></a>
-            <a href="#features"><span><Sparkles size={17} strokeWidth={1.4} aria-hidden="true" />What we offer</span><ArrowRight size={15} aria-hidden="true" /></a>
-            <a href="#services"><span><Wrench size={17} strokeWidth={1.4} aria-hidden="true" />Our services</span><ArrowRight size={15} aria-hidden="true" /></a>
-            <a href="#features"><span><Building2 size={17} strokeWidth={1.4} aria-hidden="true" />Project features</span><ArrowRight size={15} aria-hidden="true" /></a>
-            <a href="#floor-plans"><span><Layers3 size={17} strokeWidth={1.4} aria-hidden="true" />Floor plans</span><ArrowRight size={15} aria-hidden="true" /></a>
-            <a href="/gallery" aria-disabled="true" title="Gallery page is coming soon" onClick={(event) => event.preventDefault()}><span><Images size={17} strokeWidth={1.4} aria-hidden="true" />Gallery</span><ArrowRight size={15} aria-hidden="true" /></a>
-            <a href="#quotation"><span><MessageCircle size={17} strokeWidth={1.4} aria-hidden="true" />Get in touch</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={siteHref('#story', internalPage)} aria-current={pathname === '/about' ? 'page' : undefined}><span><Info size={17} strokeWidth={1.4} aria-hidden="true" />About us</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={siteHref('#features', internalPage)}><span><Sparkles size={17} strokeWidth={1.4} aria-hidden="true" />What we offer</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={siteHref('#services', internalPage)}><span><Wrench size={17} strokeWidth={1.4} aria-hidden="true" />Our services</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={siteHref('#features', internalPage)}><span><Building2 size={17} strokeWidth={1.4} aria-hidden="true" />Project features</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={siteHref('#floor-plans', internalPage)}><span><Layers3 size={17} strokeWidth={1.4} aria-hidden="true" />Floor plans</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href="/gallery"><span><Images size={17} strokeWidth={1.4} aria-hidden="true" />Gallery</span><ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={siteHref('#quotation', internalPage)}><span><MessageCircle size={17} strokeWidth={1.4} aria-hidden="true" />Get in touch</span><ArrowRight size={15} aria-hidden="true" /></a>
           </nav>
           <div className={styles.connected}>
             <p className={styles.eyebrow}>Stay connected</p>

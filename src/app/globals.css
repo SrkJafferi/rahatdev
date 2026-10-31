@@ -208,7 +208,7 @@ ul { margin: 0; padding: 0; list-style: none }
 .hero-cloud-right { left: 0; top: 7%; width: min(577px, 40.6vw); animation-duration: 100s; animation-delay: -60s }
 @keyframes hero-cloud-drift { from { transform: translateX(-110%) } to { transform: translateX(calc(100vw + 110%)) } }
 @media (prefers-reduced-motion: reduce) { .hero-cloud { animation: none; will-change: auto; } .hero-cloud-right { left: 55%; } .hero-overview > span { transition: none; } }
-.hero-marquee { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; opacity: .7; text-shadow: 0 2px 20px #10253835 }
+.hero-marquee { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; opacity: .7; padding-bottom: 10px; text-shadow: 0 2px 20px #10253835 }
 .hero-marquee-track { display: flex; width: max-content; will-change: transform; animation: hero-marquee 130s linear infinite }
 .hero-marquee-set { display: flex }
 .hero-marquee-item {
@@ -623,7 +623,8 @@ ul { margin: 0; padding: 0; list-style: none }
   .header-nav.is-open { display: flex }
   .header-nav a { padding: 15px 0; font-size: 14px; border-bottom: 1px solid var(--line) }
   .header-nav a::after { display: none }
-  .nav-toggle { display: block; margin-left: auto }
+  .nav-toggle { display: block }
+  .header-actions { margin-left: auto }
   .header-cta { display: none }
 
   /* Non-pinned fallbacks: the sticky stages relax into plain stacked content. */

@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     locale: 'en_PK',
     url: siteUrl.href,
     type: 'website',
-    images: [{ url: socialImage, secureUrl: socialImage, width: 1200, height: 675, type: 'image/jpeg', alt: 'Rahat Associates — Find Your Perfect Space. For Living or Investment.' }],
+    images: [{ url: socialImage, secureUrl: socialImage, width: 1200, height: 675, type: 'image/jpeg', alt: 'Rahat Associates: Find Your Perfect Space. For Living or Investment.' }],
   },
-  twitter: { card: 'summary_large_image', title: siteTitle, description: siteDescription, images: [{ url: socialImage, alt: 'Rahat Associates — Find Your Perfect Space.' }] },
+  twitter: { card: 'summary_large_image', title: siteTitle, description: siteDescription, images: [{ url: socialImage, alt: 'Rahat Associates: Find Your Perfect Space.' }] },
   icons: { icon: '/media/logo.png' },
 };
 

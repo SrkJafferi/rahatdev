@@ -27,7 +27,7 @@ export function Intro() {
           <IntroHeading />
           <div className={styles.copy}>
             <Reveal delay={0.12}><p>Rahat Associates brings apartments, shops and offices together through a portfolio of residential and commercial addresses. Our perspective is rooted in the everyday: a place to live, a place to work, and the connection between the two.</p></Reveal>
-            <Reveal delay={0.16}><p>The portfolio spans Rahat Heights in Faisal Margalla City (FMC), Smart One Heights 2 in Bahria Enclave, Islamabad, and Rahat Heights II in Grand City, Kharian — distinct locations connected by a shared mixed-use outlook.</p></Reveal>
+            <Reveal delay={0.16}><p>The portfolio spans Rahat Heights in Faisal Margalla City (FMC), Smart One Heights 2 in Bahria Enclave, Islamabad, and Rahat Heights II in Grand City, Kharian, distinct locations connected by a shared mixed-use outlook.</p></Reveal>
           </div>
           <Reveal delay={0.2}>
             <div className={styles.values}>

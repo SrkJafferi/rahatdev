@@ -1,9 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Facebook, Instagram, Menu, X } from 'lucide-react';
 import { contact } from '@/data/projects';
+import { siteHref } from '@/lib/navigation';
 
 const navigation: [string, string][] = [
   ['Home', '#home'],
@@ -12,10 +14,11 @@ const navigation: [string, string][] = [
   ['Floor plans', '#floor-plans'],
   ['Our Services', '#services'],
   ['Gallery', '/gallery'],
-  ['Contact', '#quotation'],
+  ['Contact', '/contact'],
 ];
 
-export function Header() {
+export function Header({ internalPage = false }: { internalPage?: boolean }) {
+  const pathname = usePathname();
   const [stuck, setStuck] = useState(false);
   const [open, setOpen] = useState(false);
   const bar = useRef<HTMLSpanElement>(null);
@@ -59,7 +62,7 @@ export function Header() {
   return (
     <header className={`site-header ${stuck ? 'is-stuck' : ''}`}>
       <div className="wrap header-bar">
-        <a className="brand" href="#home" aria-label="Rahat Associates — home" onClick={() => setOpen(false)}>
+        <a className="brand" href={siteHref('#home', internalPage)} aria-label="Rahat Associates home" onClick={() => setOpen(false)}>
           <Image
             src="/media/logo.png"
             alt="Rahat Associates Estate & Builders"
@@ -71,8 +74,7 @@ export function Header() {
         </a>
         <nav id="main-navigation" aria-label="Main navigation" className={`header-nav ${open ? 'is-open' : ''}`}>
           {navigation.map(([label, href]) => (
-            <a key={href} href={href} aria-disabled={href === '/gallery' ? true : undefined} title={href === '/gallery' ? 'Gallery page is coming soon' : undefined} onClick={(event) => {
-              if (href === '/gallery') event.preventDefault();
+            <a key={href} href={siteHref(href, internalPage)} aria-current={siteHref(href, internalPage) === pathname ? 'page' : undefined} onClick={() => {
               setOpen(false);
             }}>
               {label}
@@ -84,7 +86,7 @@ export function Header() {
             <a href={contact.facebook} target="_blank" rel="noopener noreferrer" aria-label="Rahat Associates on Facebook"><Facebook size={22} strokeWidth={1.4} /></a>
             <a className="header-instagram" href={contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Rahat Associates on Instagram"><Instagram size={23} strokeWidth={1.5} /></a>
           </div>
-          <a href="#quotation" className="header-cta" onClick={() => setOpen(false)}>
+          <a href={siteHref('#quotation', internalPage)} className="header-cta" onClick={() => setOpen(false)}>
             Project enquiry <ArrowUpRight size={22} />
           </a>
         </div>

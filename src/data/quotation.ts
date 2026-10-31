@@ -1,6 +1,6 @@
 import { projects } from './projects';
 
-export const quotationProjects = projects.map(({ id, name, location }) => ({ value: id, label: `${name} — ${location}` }));
+export const quotationProjects = projects.map(({ id, name, location }) => ({ value: id, label: `${name} · ${location}` }));
 export const budgetOptions = ['Under PKR 5 Million', 'PKR 5M – 10M', 'PKR 10M – 20M', 'PKR 20M – 50M', 'Above PKR 50M', 'Prefer Not to Specify'];
 
 /** No verified, available rental inventory is configured in the frontend dataset. */
