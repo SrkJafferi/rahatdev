@@ -552,6 +552,7 @@ ul { margin: 0; padding: 0; list-style: none }
 .source-note { margin-top: 28px !important; font-size: 11.5px !important; line-height: 1.8; color: var(--neutral) }
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px }
 .lightbox { max-width: 1220px; padding: clamp(18px, 2vw, 30px); background: var(--navy); color: var(--white) }
+.lightbox .modal-close { color: var(--ink) }
 .lightbox-image { position: relative; height: 66svh; margin: 18px 0 }
 .lightbox-image img { object-fit: contain }
 .lightbox-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding-top: 14px }

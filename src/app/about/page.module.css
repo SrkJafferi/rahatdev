@@ -104,15 +104,57 @@
 
 .story { padding: 86px 0 0; background: linear-gradient(180deg, #fff, #f9fbfd); overflow: clip; }
 .storyGrid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 9%; align-items: center; }
-.storyCopy > div > p:not(.kicker) { margin-top: 20px; max-width: 535px; font-size: 15px; line-height: 1.85; color: #1e2022; }
-.storyCopy .sectionTitle { font-size: clamp(40px, 4.2vw, 65px); }
-.storyCopy .pill { margin-top: 26px; }
-.storyCopy > p:not(.kicker) { margin-top: 18px; max-width: 55ch; color: #334e63; font-size: 15px; line-height: 1.8; }
-.storyCopy blockquote { margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--brand-green); color: #10374c; font-family: var(--font-editorial), Georgia, serif; font-style: italic; font-size: 19px; }
+.storyCopy { container-type: inline-size; }
+.page .story .storyCopy .sectionTitle {
+  font-size: min(58px, 7.4cqi);
+  white-space: nowrap;
+}
+.page .story .storyCopy .sectionTitle em {
+  display: block;
+  font-size: min(60px, 7.65cqi);
+}
+.storyCopy > p:not(.kicker) { margin-top: 18px; max-width: 64ch; color: #334e63; font-size: 15px; line-height: 1.8; }
 .storyMosaic { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 8px; aspect-ratio: 1.48; }
 .storyMosaic > div { position: relative; overflow: hidden; border-radius: 12px; background: #eef5fa; }
 .storyMosaic > div:first-child { grid-row: span 2; }
 .storyMosaic img { object-fit: cover; }
+.storyContinuation { margin-top: clamp(28px, 3.5vw, 56px); }
+.storyStatement {
+  padding: clamp(18px, 2.2vw, 32px);
+  border-inline-start: 3px solid var(--brand-green);
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(110deg, #eaf4fd, #f5f9fc);
+  color: #10374c;
+}
+.storyStatement > p:first-child { font-size: clamp(18px, 2vw, 28px); font-weight: 600; line-height: 1.35; }
+.storyStatement em { color: #0067cf; font-family: var(--font-editorial), Georgia, serif; }
+.storyStatement > p + p { margin-top: 8px; font-size: 15px; line-height: 1.65; }
+.storyExperience {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: clamp(32px, 4vw, 76px);
+  padding: clamp(24px, 2.4vw, 44px) 0;
+  background:
+    radial-gradient(ellipse 53% 55% at -12% 140%, #d3e3f2 98%, transparent),
+    radial-gradient(ellipse 48% 57% at 119% 145%, #e1ecf7 98%, transparent),
+    radial-gradient(ellipse at 86% 8%, #e6eff8, transparent 57%),
+    linear-gradient(165deg, #fafbfc 0%, #f4f7fb 56%, #edf4fb 100%);
+}
+.experienceBuildings { position: absolute; z-index: -1; inset: 0 0 auto auto; width: 42%; height: 45%; overflow: hidden; opacity: .36; }
+.experienceBuildings span { position: absolute; bottom: -14%; height: 78%; width: 25%; border: 2px solid #9db7d2; background: linear-gradient(145deg, #cbdcee, #edf5fb 63%); transform: skewY(-25deg); }
+.experienceBuildings span::after { content: ''; position: absolute; inset: 0 auto 0 100%; width: 40%; background: linear-gradient(#aec6df, transparent 90%); transform: skewY(49deg); transform-origin: left top; }
+.experienceBuildings span:nth-child(1) { right: 32%; height: 95%; }
+.experienceBuildings span:nth-child(2) { right: 47%; }
+.experienceBuildings span:nth-child(3) { right: -7%; height: 60%; opacity: .5; }
+.storyDetails { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.5vw, 24px); }
+.storyDetails article { padding: clamp(16px, 1.5vw, 24px); border: 1px solid #e7edf4; border-radius: 18px; background: linear-gradient(145deg, #fff, #f1f6fb); box-shadow: 0 2px 2px #3a79a929, 0 15px 26px #447aa324; }
+.storyDetails h3 { display: flex; align-items: center; gap: 12px; color: #0b2450; font-size: clamp(16px, 1.2vw, 21px); line-height: 1.25; }
+.storyDetails h3 span { display: grid; place-items: center; flex: none; width: clamp(42px, 3.6vw, 58px); aspect-ratio: 1.06; border-radius: 20%; background: linear-gradient(145deg, #f0f6fc, #e2edf9); box-shadow: inset 0 1px 2px #a8c4e17a; }
+.storyDetails h3 svg { width: 67%; height: 67%; stroke-width: 1.3; }
+.storyDetails h3 strong { font-weight: 600; }
+.storyDetails h3 strong::after { content: ''; display: block; margin-top: 8px; width: 36px; height: 3px; border-radius: 10px; background: #a7d0ef; }
+.storyDetails article > p { margin-top: 12px; color: #22405e; font-size: 15px; line-height: 1.6; }
 
 .leadership, .companyMoments { padding-block: clamp(52px, 6vw, 96px); }
 .leadership { background: #f7fbff; }
@@ -210,12 +252,12 @@
 .journeyGroup li + li { border-left: 1px solid #cfdeeb; }
 .journeyGroup li svg { flex: none; width: 16px; height: 16px; padding: 3px; border-radius: 50%; background: var(--brand-green); color: #fff; stroke-width: 3; }
 .momentsGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.momentPhoto { position: relative; aspect-ratio: 1.45; overflow: hidden; border-radius: 12px; background: #ecf4fa; }
+.momentPhoto { position: relative; aspect-ratio: 1.45; overflow: hidden; border-radius: 12px; background: #ecf4fa; cursor: zoom-in; text-align: left; }
+.momentPhoto:focus-visible { outline: 2px solid #0067cf; outline-offset: 4px; }
 .momentPhoto img { object-fit: cover; }
-.momentPhoto figcaption { position: absolute; inset: auto 0 0; padding: 28px 13px 12px; background: linear-gradient(transparent, #082438ef); color: #fff; font-size: 12px; font-weight: 500; }
+.momentPhoto > span { position: absolute; inset: auto 0 0; padding: 28px 13px 12px; background: linear-gradient(transparent, #082438ef); color: #fff; font-size: 12px; font-weight: 500; }
 @media (max-width: 899px) {
   .milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .storyMosaic { margin-top: 28px; }
   .leaderGrid { grid-template-columns: 1fr; }
   .momentsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -343,8 +385,7 @@
   .sectionTitle { font-size: 42px; }
   .story { padding-top: 60px; }
   .storyGrid { grid-template-columns: 1fr; gap: 45px; }
-  .storyCopy .sectionTitle { font-size: 48px; }
-  .storyCopy > div > p:not(.kicker) { max-width: 100%; }
+  .storyDetails { grid-template-columns: 1fr; }
   .storyVisual { width: 83%; margin: 0 0 35px auto; }
   .storyImage { aspect-ratio: 1.25; }
   .storyDetail { width: 43%; }
@@ -389,8 +430,6 @@
   .heroFeatures small { display: inline; margin-left: 5px; }
   .heroFeatures li:first-child span { white-space: pre; }
   .scrollLink { left: 6%; bottom: 20px; color: #24485d; font-size: 8px; }
-  .storyCopy .sectionTitle { font-size: 43px; }
-  .storyCopy > div > p:not(.kicker) { font-size: 13px; }
   .pill { font-size: 11px; padding: 14px 20px; }
   .storyGrid { gap: 38px; }
   .storyVisual { width: 87%; margin-bottom: 30px; }

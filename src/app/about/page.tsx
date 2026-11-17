@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, ArrowUpRight, Building2, CalendarDays, Check, CircleCheck, Compass, Construction, Eye, House, Layers, MapPin, MessageSquareText, UserRound, Leaf, Store, Target, UsersRound } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, Award, Building2, CalendarDays, Check, CircleCheck, Compass, Construction, Eye, Handshake, House, Layers, MapPin, MessageSquareText, UserRound, Leaf, Store, Target, UsersRound } from 'lucide-react';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { FloatingContact } from '@/components/site/floating-contact';
 import { OfficeLocationSection } from '@/components/site/office-location-section';
 import { BeforeYouInvest } from '@/components/site/before-you-invest';
 import { ProjectButton } from '@/components/site/dialogs';
+import { CompanyMoments } from './company-moments';
 import { Reveal } from '@/components/motion/reveal';
 import { services } from '@/data/projects';
 import { aboutPrinciples, aboutProjects } from '@/data/about';
@@ -44,17 +45,6 @@ const journeyStats = [
   { label: 'Development transition', value: 2017, icon: Layers },
   { label: 'Completed developments', value: journeyProjects[0].projects.length, icon: Building2 },
   { label: 'Developments under construction', value: journeyProjects[1].projects.length, icon: Construction },
-];
-
-const companyPhotos = [
-  ['groundbreaking', 'Groundbreaking'],
-  ['inauguration', 'Rahat Heights inaugural ceremony'],
-  ['office-team', 'Office and team'],
-  ['community', 'Community gathering'],
-  ['project-launch', 'Project launch'],
-  ['sports', 'Sports and team spirit'],
-  ['company-gathering', 'Company gathering'],
-  ['office-opening', 'Office opening'],
 ];
 
 const title = 'About Rahat Associates | Estate & Builders';
@@ -115,10 +105,8 @@ export default function AboutPage() {
               <div className={styles.storyCopy}>
                 <p className={styles.kicker}>Our story</p>
                 <h2 className={styles.sectionTitle} id="story-title">From trusted brokerage to <em>modern development.</em></h2>
-                <p>Syed Amir Ali Shah founded Rahat Associates in Islamabad in 2012, starting with property brokerage and building client trust through transparent advice.</p>
-                <p>In 2017, the company moved into real estate development, expanding from property advisory to designing and building residential, commercial and mixed-use projects.</p>
-                <blockquote>Every project is more than bricks and space. It’s a vision brought to life.</blockquote>
-                <a className={`header-cta ${styles.pill}`} href="#projects">Discover our developments <ArrowRight size={18} /></a>
+                <p>Rahat Associates was founded in 2012 in Islamabad by Syed Amir Ali Shah as a modest brokerage firm, dedicated to connecting clients with the right properties and building trust through transparent dealings. In its early years, the company focused on providing exceptional real estate advisory services, establishing a strong reputation in the local market.</p>
+                <p>Recognizing the growing demand for quality developments and driven by a vision to create lasting communities, Rahat Associates transitioned into real estate development in 2017. This strategic shift marked the beginning of a new chapter in which the company expanded from facilitating property transactions to designing, building, and delivering projects that set new benchmarks in modern living.</p>
               </div>
               <div className={styles.storyMosaic}>
                 {['groundbreaking', 'company-gathering', 'project-launch'].map((photo) => (
@@ -127,6 +115,35 @@ export default function AboutPage() {
               </div>
             </div>
 
+            <div className={styles.storyContinuation}>
+              <div className={styles.storyStatement}>
+                <p>At Rahat Associates, we believe that every project is more than bricks and space. <em>It’s a vision brought to life.</em></p>
+                <p>Our mission is to deliver quality projects on time, every time.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.storyExperience} id="story-experience-title">
+            <div className={styles.experienceBuildings} aria-hidden="true"><span /><span /><span /></div>
+            <div className={styles.container}>
+              <div className={styles.storyDetails}>
+                <article>
+                  <h3><span><Building2 aria-hidden="true" /></span><strong>Multi-Disciplinary Expertise</strong></h3>
+                  <p>With over a decade of combined expertise in architecture, engineering, and living planning, we specialize in delivering high-quality residential, commercial, and mixed-use developments. Each project is designed with sustainability, innovation, and timeless aesthetics at its core, ensuring long-term value for our clients and stakeholders.</p>
+                </article>
+                <article>
+                  <h3><span><Handshake aria-hidden="true" /></span><strong>Collaborative Development</strong></h3>
+                  <p>From concept to completion, we work closely with investors, partners, and local authorities to transform prime locations into thriving hubs. Our latest development, Rahat Heights II, blends modern design with eco-friendly features, offering a lifestyle that’s both luxurious and responsible.</p>
+                </article>
+                <article>
+                  <h3><span><Award aria-hidden="true" /></span><strong>A Proven Portfolio</strong></h3>
+                  <p>Over the years, Rahat Associates has successfully completed a diverse portfolio of developments, including mixed-use multi-storey buildings and two-storey houses, each reflecting our dedication to quality and community impact.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.container}>
             <div className={styles.principles}>
               <Reveal className={`${styles.principle} ${styles.mission}`}>
                 <Target size={42} strokeWidth={1.3} aria-hidden="true" />
@@ -234,14 +251,7 @@ export default function AboutPage() {
           <div className={styles.container}>
             <p className={styles.kicker}>Company moments</p>
             <h2 className={styles.sectionTitle} id="company-moments-title">Our people, projects and <em>community.</em></h2>
-            <div className={styles.momentsGrid}>
-              {companyPhotos.map(([photo, label]) => (
-                <figure className={styles.momentPhoto} key={photo}>
-                  <Image src={`/media/about-company/${photo}.avif`} alt="" fill sizes="(max-width: 599px) 88vw, (max-width: 899px) 44vw, 29vw" />
-                  <figcaption>{label}</figcaption>
-                </figure>
-              ))}
-            </div>
+            <CompanyMoments />
           </div>
         </section>
 
