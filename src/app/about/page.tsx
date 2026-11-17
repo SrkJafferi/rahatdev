@@ -1,17 +1,61 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Compass, Eye, House, MapPin, MessageSquareText, UserRound, Leaf, Store, Target, UsersRound } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, Building2, CalendarDays, Check, CircleCheck, Compass, Construction, Eye, House, Layers, MapPin, MessageSquareText, UserRound, Leaf, Store, Target, UsersRound } from 'lucide-react';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { FloatingContact } from '@/components/site/floating-contact';
 import { OfficeLocationSection } from '@/components/site/office-location-section';
 import { BeforeYouInvest } from '@/components/site/before-you-invest';
 import { ProjectButton } from '@/components/site/dialogs';
-import { Parallax, Reveal } from '@/components/motion/reveal';
+import { Reveal } from '@/components/motion/reveal';
 import { services } from '@/data/projects';
 import { aboutPrinciples, aboutProjects } from '@/data/about';
 import styles from './page.module.css';
+
+const leaders = [
+  {
+    name: 'Syed Amir Ali Shah',
+    role: 'Founder & Chief Executive Officer',
+    photo: 'managing-director',
+    bio: [
+      'Syed Amir Ali Shah led Rahat Associates from its beginnings in brokerage into real estate development. He guides strategic planning, market analysis and relationships with investors, partners and other stakeholders.',
+      'His approach combines integrity, innovation and attention to what clients need, with a focus on creating places that serve residents and communities over time.',
+    ],
+  },
+  {
+    name: 'Mudasar Hussain Shah',
+    role: 'Managing Director',
+    photo: 'founder',
+    bio: [
+      'Mudasar Hussain Shah brings an ACCA qualification and banking and finance experience in the United Arab Emirates to Rahat Associates.',
+      'He leads project design, finishing and sales, drawing on international practices to improve build quality, design and the customer experience.',
+    ],
+  },
+];
+
+const journeyProjects = [
+  { title: 'Completed Developments', icon: CircleCheck, projects: ['Rahat Arcade', 'Rahat Heights', 'Rahat Homes', 'Rahat Villa', 'Hunza Home'] },
+  { title: 'Under Construction', icon: Construction, projects: ['Smart One Heights II', 'Rahat Heights II', 'Lake View Apartments'] },
+];
+
+const journeyStats = [
+  { label: 'Founded', value: 2012, icon: CalendarDays },
+  { label: 'Development transition', value: 2017, icon: Layers },
+  { label: 'Completed developments', value: journeyProjects[0].projects.length, icon: Building2 },
+  { label: 'Developments under construction', value: journeyProjects[1].projects.length, icon: Construction },
+];
+
+const companyPhotos = [
+  ['groundbreaking', 'Groundbreaking'],
+  ['inauguration', 'Rahat Heights inaugural ceremony'],
+  ['office-team', 'Office and team'],
+  ['community', 'Community gathering'],
+  ['project-launch', 'Project launch'],
+  ['sports', 'Sports and team spirit'],
+  ['company-gathering', 'Company gathering'],
+  ['office-opening', 'Office opening'],
+];
 
 const title = 'About Rahat Associates | Estate & Builders';
 const description = 'Learn about Rahat Associates, our approach to residential and commercial developments, and our projects in Islamabad and Kharian.';
@@ -69,24 +113,17 @@ export default function AboutPage() {
           <div className={styles.container}>
             <div className={styles.storyGrid}>
               <div className={styles.storyCopy}>
-                <Reveal><p className={styles.kicker}>Who we are</p></Reveal>
-                <Reveal delay={0.06}><h2 className={styles.sectionTitle} id="story-title">Developing better<br /><em>tomorrows.</em></h2></Reveal>
-                <Reveal delay={0.1}><p>We see a property as part of a bigger picture: the way people live, the businesses they build and the communities they become part of.</p></Reveal>
-                <Reveal delay={0.14}><p>Rahat Associates brings residential and commercial opportunities together across Islamabad and Kharian. From apartments and penthouses to shops and offices, our developments connect everyday comfort with modern convenience.</p></Reveal>
-                <Reveal delay={0.18}><p>Our portfolio includes Rahat Heights, Smart One Heights 2 and Rahat Heights II, three distinct addresses, connected by a thoughtful approach to living and business.</p></Reveal>
-                <Reveal delay={0.22}><a className={`header-cta ${styles.pill}`} href="#projects">Discover our developments <ArrowRight size={18} /></a></Reveal>
+                <p className={styles.kicker}>Our story</p>
+                <h2 className={styles.sectionTitle} id="story-title">From trusted brokerage to <em>modern development.</em></h2>
+                <p>Syed Amir Ali Shah founded Rahat Associates in Islamabad in 2012, starting with property brokerage and building client trust through transparent advice.</p>
+                <p>In 2017, the company moved into real estate development, expanding from property advisory to designing and building residential, commercial and mixed-use projects.</p>
+                <blockquote>Every project is more than bricks and space. It’s a vision brought to life.</blockquote>
+                <a className={`header-cta ${styles.pill}`} href="#projects">Discover our developments <ArrowRight size={18} /></a>
               </div>
-              <div className={styles.storyVisual}>
-                <span className={styles.imageMat} aria-hidden="true" />
-                <Reveal variant="mask" className={styles.storyImage}>
-                  <Image src={aboutProjects[2].image} alt="Rahat Heights II architectural render, Grand City, Kharian" fill sizes="(max-width: 899px) 85vw, 42vw" quality={90} />
-                </Reveal>
-                <Parallax className={styles.storyDetail} strength={4}>
-                  <div><Image src={aboutProjects[0].detail} alt="Rahat Heights façade and commercial frontage, architectural render" fill sizes="(max-width: 899px) 42vw, 20vw" quality={90} /></div>
-                  <p>Rahat Heights <span>· FMC</span></p>
-                </Parallax>
-                <div className={styles.storyBadge}><Building2 size={29} strokeWidth={1.4} aria-hidden="true" /><span>Modern spaces.<strong>Connected communities.</strong></span><span className={styles.badgeCheck}><Check size={12} /></span></div>
-                <p className={styles.imageNote}>Rahat Heights II · Grand City, Kharian</p>
+              <div className={styles.storyMosaic}>
+                {['groundbreaking', 'company-gathering', 'project-launch'].map((photo) => (
+                  <div key={photo}><Image src={`/media/about-company/${photo}.avif`} alt="" fill sizes="(max-width: 899px) 44vw, 26vw" /></div>
+                ))}
               </div>
             </div>
 
@@ -101,6 +138,50 @@ export default function AboutPage() {
                 <div><p className={styles.principleLabel}>Our perspective</p><h3>Our Vision</h3><p>{aboutPrinciples.vision}</p></div>
                 <span className={styles.principleArt} aria-hidden="true"><Image src="/media/rahat-heights-ii-detail.webp" alt="" fill sizes="40vw" /></span>
               </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.leadership} id="leadership" aria-labelledby="leadership-title">
+          <div className={styles.container}>
+            <p className={styles.kicker}>Meet our leadership</p>
+            <h2 className={styles.sectionTitle} id="leadership-title">The people behind <em>Rahat Associates.</em></h2>
+            <div className={styles.leaderGrid}>
+              {leaders.map((leader) => (
+                <article className={styles.leaderCard} key={leader.photo}>
+                  <div className={styles.leaderPortrait}><Image src={`/media/about-company/${leader.photo}.avif`} alt={leader.name} fill sizes="(max-width: 599px) 210px, 220px" /></div>
+                  <div className={styles.leaderCopy}>
+                    <h3>{leader.name}</h3>
+                    <p className={styles.leaderRole}>{leader.role}</p>
+                    {leader.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.journey} id="journey" aria-labelledby="journey-title">
+          <div className={styles.container}>
+            <p className={styles.kicker}>Our journey</p>
+            <h2 className={styles.sectionTitle} id="journey-title">Projects That Define <em>Our Growth.</em></h2>
+            <dl className={styles.milestones}>
+              {journeyStats.map(({ label, value, icon: Icon }) => (
+                <div key={label}>
+                  <dt><Icon className={styles.journeyIcon} aria-hidden="true" />{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className={styles.journeyProjects}>
+              {journeyProjects.map(({ title, projects, icon: Icon }) => (
+                <div className={styles.journeyGroup} key={title}>
+                  <h3><Icon aria-hidden="true" />{title}</h3>
+                  <ul>
+                    {projects.map((project) => <li key={project}><Check size={16} aria-hidden="true" />{project}</li>)}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -146,6 +227,21 @@ export default function AboutPage() {
               </Reveal>)}
             </div>
             <p className={styles.renderNote}>Architectural renders from the project brochures. Explore each development for details.</p>
+          </div>
+        </section>
+
+        <section className={styles.companyMoments} id="company-moments" aria-labelledby="company-moments-title">
+          <div className={styles.container}>
+            <p className={styles.kicker}>Company moments</p>
+            <h2 className={styles.sectionTitle} id="company-moments-title">Our people, projects and <em>community.</em></h2>
+            <div className={styles.momentsGrid}>
+              {companyPhotos.map(([photo, label]) => (
+                <figure className={styles.momentPhoto} key={photo}>
+                  <Image src={`/media/about-company/${photo}.avif`} alt="" fill sizes="(max-width: 599px) 88vw, (max-width: 899px) 44vw, 29vw" />
+                  <figcaption>{label}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 

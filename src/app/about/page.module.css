@@ -107,6 +107,130 @@
 .storyCopy > div > p:not(.kicker) { margin-top: 20px; max-width: 535px; font-size: 15px; line-height: 1.85; color: #1e2022; }
 .storyCopy .sectionTitle { font-size: clamp(40px, 4.2vw, 65px); }
 .storyCopy .pill { margin-top: 26px; }
+.storyCopy > p:not(.kicker) { margin-top: 18px; max-width: 55ch; color: #334e63; font-size: 15px; line-height: 1.8; }
+.storyCopy blockquote { margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--brand-green); color: #10374c; font-family: var(--font-editorial), Georgia, serif; font-style: italic; font-size: 19px; }
+.storyMosaic { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 8px; aspect-ratio: 1.48; }
+.storyMosaic > div { position: relative; overflow: hidden; border-radius: 12px; background: #eef5fa; }
+.storyMosaic > div:first-child { grid-row: span 2; }
+.storyMosaic img { object-fit: cover; }
+
+.leadership, .companyMoments { padding-block: clamp(52px, 6vw, 96px); }
+.leadership { background: #f7fbff; }
+.leaderGrid, .momentsGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
+.leaderCard { display: grid; grid-template-columns: minmax(130px, 33%) minmax(0, 1fr); gap: 22px; align-items: start; padding: 18px; border: 1px solid #dfebf4; border-radius: 18px; background: #fff; box-shadow: 0 10px 28px #183d5a08; }
+.leaderPortrait { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 12px; background: #edf5fc; }
+.leaderPortrait img { object-fit: cover; object-position: center top; }
+.leaderCopy { padding-block: 5px; }
+.leaderCopy h3 { font-size: clamp(22px, 2vw, 30px); line-height: 1.15; color: #10374c; }
+.leaderCopy .leaderRole { color: #0067cf; font-weight: 600; margin-top: 9px; }
+.leaderCopy p { margin-top: 12px; color: #334e63; font-size: 13px; line-height: 1.7; }
+.journey {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(38px, 3.5vw, 60px);
+  background: radial-gradient(ellipse at 50% 20%, #fff 35%, #f4f8fc 100%);
+}
+.journey::before, .journey::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: clamp(420px, 44vw, 780px);
+  height: clamp(165px, 17vw, 295px);
+  border-radius: 50%;
+  background: linear-gradient(165deg, #b8d9fc85, #eaf4ff30);
+  box-shadow: 0 28px 0 14px #dfedfc55;
+  transform: rotate(-24deg);
+  pointer-events: none;
+}
+.journey::before { top: -28%; left: -16%; }
+.journey::after { bottom: -30%; right: -14%; transform: rotate(156deg); }
+.milestones, .journeyProjects { display: grid; gap: clamp(12px, 1.25vw, 21px); margin: 22px 0 0; }
+.milestones { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.milestones > div, .journeyGroup {
+  border: 1px solid #dbe8f4;
+  border-radius: 17px;
+  box-shadow: 0 2px 2px #163f6410, 0 12px 20px #2454821a, inset 0 1px 0 #fff;
+}
+.milestones > div {
+  --tile: clamp(42px, 3.85vw, 59px);
+  --edge: clamp(12px, 1.5vw, 23px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-content: center;
+  gap: 7px;
+  min-height: clamp(108px, 7.4vw, 126px);
+  padding: 13px var(--edge) 13px calc(var(--edge) + var(--tile) + 30px);
+  background: linear-gradient(145deg, #fff, #edf4fd 72%, #f6faff);
+}
+.milestones > div::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -16%;
+  bottom: -65%;
+  width: 64%;
+  height: 140%;
+  border-radius: 85% 0 0 0;
+  transform: rotate(-21deg);
+  background: linear-gradient(152deg, #c9e3ffb8, #eaf4ff30 72%);
+}
+.milestones > div::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--edge) + var(--tile) + 13px);
+  top: 23%;
+  bottom: 23%;
+  width: 1px;
+  background: #bfd3e7;
+}
+.journeyIcon {
+  position: absolute;
+  left: var(--edge);
+  top: 50%;
+  width: var(--tile);
+  height: var(--tile);
+  padding: 11px;
+  transform: translateY(-50%);
+  border-radius: 17px;
+  background: linear-gradient(#f0f6fc, #e1edfc);
+  color: var(--brand-blue);
+}
+.milestones dt { color: #122d4a; font-size: clamp(12px, 1vw, 16px); line-height: 1.25; }
+.milestones dd { margin: 0; color: var(--brand-blue); font-size: clamp(29px, 2.65vw, 44px); font-weight: 700; line-height: 1; }
+.journeyProjects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.journeyGroup { padding: clamp(15px, 1.65vw, 25px); background: linear-gradient(#fff, #f4f8fc); }
+.journeyGroup h3 { position: relative; display: flex; align-items: center; gap: 17px; padding-bottom: 12px; color: #142b49; font-size: clamp(17px, 1.55vw, 25px); line-height: 1.2; }
+.journeyGroup h3::after { content: ''; position: absolute; left: 65px; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, var(--brand-green) 46px, #dce7ef 46px); }
+.journeyGroup h3 svg { flex: none; width: 48px; height: 48px; padding: 10px; border-radius: 16px; background: linear-gradient(#f4faf2, #e0efdb); color: var(--brand-green); }
+.journeyGroup ul { display: flex; flex-wrap: wrap; row-gap: 8px; margin-top: 15px; }
+.journeyGroup li { display: flex; align-items: center; gap: 7px; padding: 4px clamp(7px, .7vw, 13px); color: #142b49; font-size: clamp(11px, .9vw, 15px); }
+.journeyGroup li + li { border-left: 1px solid #cfdeeb; }
+.journeyGroup li svg { flex: none; width: 16px; height: 16px; padding: 3px; border-radius: 50%; background: var(--brand-green); color: #fff; stroke-width: 3; }
+.momentsGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.momentPhoto { position: relative; aspect-ratio: 1.45; overflow: hidden; border-radius: 12px; background: #ecf4fa; }
+.momentPhoto img { object-fit: cover; }
+.momentPhoto figcaption { position: absolute; inset: auto 0 0; padding: 28px 13px 12px; background: linear-gradient(transparent, #082438ef); color: #fff; font-size: 12px; font-weight: 500; }
+@media (max-width: 899px) {
+  .milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .storyMosaic { margin-top: 28px; }
+  .leaderGrid { grid-template-columns: 1fr; }
+  .momentsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) {
+  .leaderCard { grid-template-columns: 1fr; gap: 15px; }
+  .leaderPortrait { width: min(100%, 210px); }
+  .milestones { gap: 10px; }
+  .milestones > div { --tile: 38px; min-height: 124px; padding: 12px; }
+  .milestones > div::after { display: none; }
+  .journeyIcon { position: static; display: block; padding: 8px; margin-bottom: 7px; transform: none; }
+  .journeyProjects { grid-template-columns: 1fr; }
+  .journeyGroup li { padding-inline: 0 12px; }
+  .journeyGroup li + li { border-left: 0; }
+  .momentsGrid { grid-template-columns: 1fr; }
+}
 .storyVisual { position: relative; margin: 0 0 46px 6%; }
 .imageMat { position: absolute; inset: 7% 8% -7% -9%; border-radius: 20px; background: #eaf3fc; }
 .storyImage { position: relative; width: 100%; aspect-ratio: 1.04; overflow: hidden; border-radius: 17px; background: #e4edf3; }
